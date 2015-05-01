@@ -9,6 +9,8 @@ public class textBox : ccEventBase {
 	public string[] 		textEvents;
 	public GameObject		letterMesh; 			// Prefab
 	public float			letterWidth = 1f;
+	public float			lineHeight = 1f;
+	public float 			maxLineWidth = 20f;	
 	
 	private List<GameObject> letterMeshes = new List<GameObject>();			// All instances of letterMesh
 	private int 			currentTextIndex = 0;
@@ -51,6 +53,7 @@ public class textBox : ccEventBase {
 
 	void instantiateLetterMeshes(){
 		int numberOfChar = text[currentTextIndex].Length;
+		float currLineWidth;
 
 		for (int i = 0; i < text[currentTextIndex].Length; i++) {
 			char letter = text[currentTextIndex][i];
@@ -58,10 +61,17 @@ public class textBox : ccEventBase {
 			if(char.IsWhiteSpace(letter)){
 
 			} else {
+				// TODO: scale up animation
+
+				//if(currLineWidth > maxLineWidth){
+					// start a new line
+				//}
+
 				Vector3 letterPos = transform.position;
 				letterPos.x = letterPos.x + (letterWidth * (float)i);
 				GameObject l = (GameObject) Instantiate(letterMesh, letterPos, transform.rotation);
 				l.GetComponent<TextMesh>().text = letter.ToString();
+				l.transform.parent = transform;
 				letterMeshes.Add(l);
 			}
 		}
