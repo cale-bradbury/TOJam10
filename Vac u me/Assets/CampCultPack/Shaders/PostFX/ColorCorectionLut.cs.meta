@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 43e1bb6daa8169642bd108449a6a3b23
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - shader: {fileID: 4800000, guid: 8f06da3e057a5444c95e6711b6bf29ca, type: 3}
+  - textureRamp: {fileID: 2800000, guid: 81e25be0e4ab012488e772f05e54871a, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
