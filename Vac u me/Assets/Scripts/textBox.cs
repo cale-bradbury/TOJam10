@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class textBox : ccEventBase {
 
-	public string completeEvent;
-	public string[] text;
-	public string[] textEvents;
+	public string 			completeEvent; 			// event broadcasted on completion
+	public string[] 		text;					// text that will be iterated through
+	public string[] 		textEvents;
+	public GameObject		letterMesh; 			// Prefab
+	public float			letterWidth = 1f;
 
-	private TextMesh textMesh;
-	private int currentTextIndex = 0;
-	private bool isTextShown = false;
+	private TextMesh 		textMesh;				// will be deprecated
+	private List<GameObject> letterMeshes = new List<GameObject>();			// All instances of letterMesh
+	private int 			currentTextIndex = 0;
+	private bool 			isTextShown = false;
 
 	void Awake(){
 		textMesh = GetComponent<TextMesh>();
@@ -29,7 +33,9 @@ public class textBox : ccEventBase {
 		}
 
 		if (currentTextIndex < text.Length) {
-			textMesh.text = text [currentTextIndex];
+			//textMesh.text = text [currentTextIndex];
+			destroyAllLetterMeshes();
+			instantiateLetterMeshes();
 			broadcastTextEvents();
 		} else {
 			Messenger.Broadcast(completeEvent);
@@ -44,4 +50,61 @@ public class textBox : ccEventBase {
 		}
 	}
 
+	void instantiateLetterMeshes(){
+		int numberOfChar = text[currentTextIndex].Length;
+
+		for (int i = 0; i < text[currentTextIndex].Length; i++) {
+			char letter = text[currentTextIndex][i];
+
+			if(char.IsWhiteSpace(letter)){
+
+			} else {
+				Vector3 letterPos = transform.position;
+				letterPos.x = letterPos.x + (letterWidth * (float)i);
+				GameObject l = (GameObject) Instantiate(letterMesh, letterPos, transform.rotation);
+				l.GetComponent<TextMesh>().text = letter.ToString();
+				letterMeshes.Add(l);
+			}
+		}
+	}
+
+	void destroyAllLetterMeshes(){
+		if (letterMeshes.Count > 0) {
+			// TODO: scale them back down
+			
+			for (int i = 0; i < letterMeshes.Count; i++) {
+				Destroy(letterMeshes[i]);
+			}
+			
+			letterMeshes.Clear();
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
