@@ -1,15 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class textBox : MonoBehaviour {
+public class textBox : ccEventBase {
 
-	// Use this for initialization
-	void Start () {
-	
+	public string[] text;
+
+	private TextMesh textMesh;
+	private int currentTextIndex = 0;
+	private bool isTextShown = false;
+
+	void Awake(){
+		textMesh = GetComponent<TextMesh>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	protected override void OnEvent (){
+		base.OnEvent ();
+		displayText ();
 	}
+
+	void displayText(){
+
+		if (isTextShown) {
+			currentTextIndex++;
+		} else {
+			isTextShown = true;
+		}
+
+		if (currentTextIndex < text.Length) {
+			textMesh.text = text [currentTextIndex];
+		} else {
+			// No more texts, trigger event in Messagner.broadcast
+		}
+	}
+
 }
