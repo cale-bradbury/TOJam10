@@ -14,6 +14,7 @@ public class textBox : ccEventBase {
 	
 	private List<GameObject> letterMeshes = new List<GameObject>();			// All instances of letterMesh
 	private int 			currentTextIndex = 0;
+	private int 			currentLineIndex = 0;	// 0 is the first line
 	private bool 			isTextShown = false;
 
 
@@ -53,26 +54,33 @@ public class textBox : ccEventBase {
 
 	void instantiateLetterMeshes(){
 		int numberOfChar = text[currentTextIndex].Length;
-		float currLineWidth;
+		float currLineWidth = 0f;
 
 		for (int i = 0; i < text[currentTextIndex].Length; i++) {
 			char letter = text[currentTextIndex][i];
-
+			
 			if(char.IsWhiteSpace(letter)){
+
+				if(currLineWidth >= maxLineWidth){
+					// start a new line
+					Debug.Log ("Line width has been exceeded");
+					currentLineIndex++;
+					currLineWidth = 0;
+				} else {
+					currLineWidth += letterWidth;
+				}
 
 			} else {
 				// TODO: scale up animation
-
-				//if(currLineWidth > maxLineWidth){
-					// start a new line
-				//}
-
 				Vector3 letterPos = transform.position;
-				letterPos.x = letterPos.x + (letterWidth * (float)i);
+				letterPos.x = letterPos.x + (currLineWidth);
+				letterPos.y = letterPos.y - (lineHeight * (float)currentLineIndex);
 				GameObject l = (GameObject) Instantiate(letterMesh, letterPos, transform.rotation);
 				l.GetComponent<TextMesh>().text = letter.ToString();
 				l.transform.parent = transform;
 				letterMeshes.Add(l);
+
+				currLineWidth += letterWidth;
 			}
 		}
 	}
