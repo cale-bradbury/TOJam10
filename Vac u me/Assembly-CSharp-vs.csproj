@@ -148,11 +148,16 @@
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\Static.cs" />
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\TwoTone.cs" />
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\WebcamTexture.cs" />
+     <Compile Include="Assets\EventDestroyObject.cs" />
      <Compile Include="Assets\HOTween\_Demo\HOTweenDemoBrain.cs" />
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\Core\ABSHOTweenEditorElement.cs" />
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\HOTweenComponent.cs" />
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\HOTweenManager.cs" />
+     <Compile Include="Assets\ObjectScript.cs" />
      <Compile Include="Assets\Scripts\textBox.cs" />
+     <Compile Include="Assets\SpawnManager.cs" />
+     <Compile Include="Assets\SpawnOnDestroy.cs" />
+     <Compile Include="Assets\VacScript.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\CampCultPack\Shaders\Tint.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
