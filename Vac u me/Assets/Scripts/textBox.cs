@@ -3,6 +3,7 @@ using System.Collections;
 
 public class textBox : ccEventBase {
 
+	public string completeEvent;
 	public string[] text;
 
 	private TextMesh textMesh;
@@ -29,7 +30,7 @@ public class textBox : ccEventBase {
 		if (currentTextIndex < text.Length) {
 			textMesh.text = text [currentTextIndex];
 		} else {
-			// No more texts, trigger event in Messagner.broadcast
+			Messenger.Broadcast(completeEvent);
 		}
 	}
 
