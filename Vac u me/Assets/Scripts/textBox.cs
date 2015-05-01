@@ -5,6 +5,7 @@ public class textBox : ccEventBase {
 
 	public string completeEvent;
 	public string[] text;
+	public string[] textEvents;
 
 	private TextMesh textMesh;
 	private int currentTextIndex = 0;
@@ -29,8 +30,17 @@ public class textBox : ccEventBase {
 
 		if (currentTextIndex < text.Length) {
 			textMesh.text = text [currentTextIndex];
+			broadcastTextEvents();
 		} else {
 			Messenger.Broadcast(completeEvent);
+		}
+	}
+
+	void broadcastTextEvents(){
+		if (textEvents.Length > 0) {
+			if(textEvents[currentTextIndex].Length > 0){
+				Messenger.Broadcast(textEvents[currentTextIndex]);
+			}
 		}
 	}
 
