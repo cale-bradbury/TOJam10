@@ -9,15 +9,11 @@ public class textBox : ccEventBase {
 	public string[] 		textEvents;
 	public GameObject		letterMesh; 			// Prefab
 	public float			letterWidth = 1f;
-
-	private TextMesh 		textMesh;				// will be deprecated
+	
 	private List<GameObject> letterMeshes = new List<GameObject>();			// All instances of letterMesh
 	private int 			currentTextIndex = 0;
 	private bool 			isTextShown = false;
 
-	void Awake(){
-		textMesh = GetComponent<TextMesh>();
-	}
 
 	protected override void OnEvent (){
 		base.OnEvent ();
@@ -26,19 +22,22 @@ public class textBox : ccEventBase {
 
 	void displayText(){
 
-		if (isTextShown) {
-			currentTextIndex++;
-		} else {
-			isTextShown = true;
-		}
+		incrementTextIndex ();
 
 		if (currentTextIndex < text.Length) {
-			//textMesh.text = text [currentTextIndex];
 			destroyAllLetterMeshes();
 			instantiateLetterMeshes();
 			broadcastTextEvents();
 		} else {
 			Messenger.Broadcast(completeEvent);
+		}
+	}
+
+	void incrementTextIndex(){
+		if (isTextShown) {
+			currentTextIndex++;
+		} else {
+			isTextShown = true;
 		}
 	}
 
