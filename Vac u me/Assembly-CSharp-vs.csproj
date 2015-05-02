@@ -86,6 +86,7 @@
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventEnableObject.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventFieldBase.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventPosition.cs" />
+     <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventReflection.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventSetTexture.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccFloatEventBase.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccFloatEventFOV.cs" />
@@ -159,6 +160,7 @@
      <Compile Include="Assets\Scripts\textBox.cs" />
      <Compile Include="Assets\SpawnManager.cs" />
      <Compile Include="Assets\VacScript.cs" />
+     <Compile Include="Assets\ccEventRandomizeFloat.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\CampCultPack\Shaders\Tint.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
