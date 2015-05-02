@@ -18,6 +18,7 @@ ModelImporter:
     100024: Object007
     100026: //RootNode
     100028: Shitty_Cellular
+    100030: Box021
     400000: Box005
     400002: Box006
     400004: Box007
@@ -33,6 +34,7 @@ ModelImporter:
     400024: Object007
     400026: //RootNode
     400028: Shitty_Cellular
+    400030: Box021
     2300000: Box005
     2300002: Box006
     2300004: Box007
@@ -47,6 +49,7 @@ ModelImporter:
     2300022: Box020
     2300024: Object007
     2300026: Shitty_Cellular
+    2300028: Box021
     3300000: Box005
     3300002: Box006
     3300004: Box007
@@ -61,6 +64,7 @@ ModelImporter:
     3300022: Box020
     3300024: Object007
     3300026: Shitty_Cellular
+    3300028: Box021
     4300000: Box005
     4300002: Box006
     4300004: Box007
@@ -75,6 +79,7 @@ ModelImporter:
     4300022: Box020
     4300024: Object007
     4300026: Shitty_Cellular
+    4300028: Box021
     9500000: //RootNode
   materials:
     importMaterials: 1

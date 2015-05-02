@@ -4,6 +4,8 @@ using Holoville.HOTween;
 
 public class ObjectScript : MonoBehaviour {
 
+	public Game.Type[] types;
+
 	public float weight = 1;
 	public float value = 1;
 	public string onCollectEvent;
