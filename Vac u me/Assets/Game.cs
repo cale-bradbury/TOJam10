@@ -14,6 +14,7 @@ public class Game : MonoBehaviour {
 		LARPing, 		// related to games + Nerdy
 		Nerdy,
 		Tech, 
+		General
 
 	}
 	public static string[] typeNames;
