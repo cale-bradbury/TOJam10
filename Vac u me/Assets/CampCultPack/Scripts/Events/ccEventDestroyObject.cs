@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EventDestroyObject : ccEventBase {
+public class ccEventDestroyObject : ccEventBase {
 
 	public GameObject obj;
 	

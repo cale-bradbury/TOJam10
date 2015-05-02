@@ -11,6 +11,6 @@ public class SpawnOnDestroy : MonoBehaviour {
 		if (objParent == null)
 			objParent = transform.parent;
 		g.transform.parent = objParent;
-		g.transform.position = transform.position;
+		g.transform.localPosition = Vector3.zero;
 	}
 }

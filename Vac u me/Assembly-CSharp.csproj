@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -76,14 +76,17 @@
      <Compile Include="Assets\CampCultPack\Scripts\Events\KeyFullscreen.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\KeyLockMouse.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\MouseLockClick.cs" />
+     <Compile Include="Assets\CampCultPack\Scripts\Events\SpawnOnDestroy.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\TimeFireEvent.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\WarpOnKey.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventAnimateFloat.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventAnimatePosition.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventBase.cs" />
+     <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventDestroyObject.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventEnableObject.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventFieldBase.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventPosition.cs" />
+     <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventReflection.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventSetTexture.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccFloatEventBase.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccFloatEventFOV.cs" />
@@ -148,7 +151,7 @@
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\Static.cs" />
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\TwoTone.cs" />
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\WebcamTexture.cs" />
-     <Compile Include="Assets\EventDestroyObject.cs" />
+     <Compile Include="Assets\Game.cs" />
      <Compile Include="Assets\HOTween\_Demo\HOTweenDemoBrain.cs" />
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\Core\ABSHOTweenEditorElement.cs" />
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\HOTweenComponent.cs" />
@@ -157,8 +160,8 @@
      <Compile Include="Assets\Scripts\scoreBoard.cs" />
      <Compile Include="Assets\Scripts\textBox.cs" />
      <Compile Include="Assets\SpawnManager.cs" />
-     <Compile Include="Assets\SpawnOnDestroy.cs" />
      <Compile Include="Assets\VacScript.cs" />
+     <Compile Include="Assets\ccEventRandomizeFloat.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\CampCultPack\Shaders\Tint.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
@@ -277,6 +280,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\CampCultPack\Shaders\PostFX\CCColorCorrection.shader" />
+     <None Include="Assets\Materials\DefaultItem.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
      <None Include="Assets\CampCultPack\Shaders\Blobs.shader" />
      <None Include="Assets\CampCultPack\Shaders\PostFX\TwoTone.shader" />
@@ -288,13 +292,13 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="HOTween">
- <HintPath>D:/Documents/TOJam10/TOJam10/Vac u me/Assets/HOTween/Plugins/HOTween.dll</HintPath>
+ <HintPath>C:/Users/graphic/Documents/GitHub/TOJam10/Vac u me/Assets/HOTween/Plugins/HOTween.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>D:/Program Files (x86)/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
