@@ -13,7 +13,7 @@ public class ccRandomPosition : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.localPosition =new Vector3(
+		transform.localPosition = new Vector3(
 			Mathf.Lerp(minimumPosition.x,maximumPosition.x,Random.value),
 			Mathf.Lerp(minimumPosition.y,maximumPosition.y,Random.value),
 			Mathf.Lerp(minimumPosition.z,maximumPosition.z,Random.value)

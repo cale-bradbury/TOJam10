@@ -5,16 +5,20 @@ using Holoville.HOTween;
 public class StickyObject : ObjectScript {
 
 	public float stickiness = 100f;
+	public GameObject childObject;
 
 	private ccRandomPosition animRandom;
 
 	public override void Start(){
 		base.Start ();
-		body.constraints = RigidbodyConstraints.FreezePosition;
+		body.constraints = RigidbodyConstraints.FreezeAll;
+		childObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 
 		addRandomPositionAnimation ();
 	}
 
+	// TODO: we need to be able to disable the shaking if 
+	// the GameObject is not being sucked anymore.
 	public override void Collect(Vector3 target){
 
 		if (stickiness <= 0) {
@@ -23,17 +27,13 @@ public class StickyObject : ObjectScript {
 		} else {
 			animRandom.enabled = true;
 			stickiness -= 0.5f;
-			// shaking animation would be cool
 		}
 	}
-
-	// TODO: this animation repositions the object, which we do not want
-	// Also I am unsure of how to know if the item is not being sucked anymore so 
-	// I can disable the shaking animation again.
+	
 	void addRandomPositionAnimation(){
 		animRandom = GetComponent<ccRandomPosition> ();
 		if (animRandom == null) {
-			animRandom = gameObject.AddComponent<ccRandomPosition>();
+			animRandom = childObject.AddComponent<ccRandomPosition>();
 		}
 		animRandom.minimumPosition = new Vector3 (-0.05f, -0.05f, -0.05f);
 		animRandom.maximumPosition = new Vector3 (0.05f, 0.05f, 0.05f);
