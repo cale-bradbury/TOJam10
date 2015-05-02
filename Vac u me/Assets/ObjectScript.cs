@@ -36,7 +36,7 @@ public class ObjectScript : MonoBehaviour {
 		Messenger.Broadcast (onCollectEvent);
 		body.mass = 0;
 		body.isKinematic = true;
-		o.collected = true;
+		collected = true;
 		HOTween.To (transform, .5f, new TweenParms ().Prop("position",target).OnComplete(Kill));
 	}
 
