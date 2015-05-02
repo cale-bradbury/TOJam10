@@ -8,6 +8,7 @@ public class StickyObject : ObjectScript {
 	public GameObject childObject;
 
 	private ccRandomPosition animRandom;
+	private float lastTimeSucked;
 
 	public override void Start(){
 		base.Start ();
@@ -17,17 +18,27 @@ public class StickyObject : ObjectScript {
 		addRandomPositionAnimation ();
 	}
 
-	// TODO: we need to be able to disable the shaking if 
-	// the GameObject is not being sucked anymore.
+	void Update(){
+
+		// Cancels animation shortly after this is no longer being sucked.
+		if (animRandom.enabled) {
+			if (Time.time - 0.05f > lastTimeSucked) {
+				animRandom.enabled = false;
+			}
+		}
+	}
+	
 	public override void Collect(Vector3 target){
 
 		if (stickiness <= 0) {
 			animRandom.enabled = false;
 			base.Collect (target);
 		} else {
+			lastTimeSucked = Time.time;
 			animRandom.enabled = true;
 			stickiness -= 0.5f;
 		}
+		Debug.Log (lastTimeSucked);
 	}
 	
 	void addRandomPositionAnimation(){
