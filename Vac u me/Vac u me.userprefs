@@ -1,23 +1,10 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\textBox.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ObjectScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\textBox.cs" Line="73" Column="38" />
-      <File FileName="Assets\CampCultPack\Scripts\Events\ccEventBase.cs" Line="1" Column="1" />
-      <File FileName="Assets\CampCultPack\Scripts\Events\KeyFireEvent.cs" Line="1" Column="1" />
-      <File FileName="Assets\CampCultPack\Scripts\Motion\ccAnimateScale.cs" Line="20" Column="1" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ccEventRandomizeFloat.cs">
-    <Files>
-      <File FileName="Assets\Materials\DefaultItem.shader" Line="30" Column="24" />
-      <File FileName="Assets\VacScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\ObjectScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\VacScript.cs" Line="30" Column="14" />
+      <File FileName="Assets\ObjectScript.cs" Line="35" Column="21" />
       <File FileName="Assets\Game.cs" Line="1" Column="1" />
-      <File FileName="Assets\ccEventRandomizeFloat.cs" Line="9" Column="39" />
-      <File FileName="Assets\CampCultPack\Scripts\Events\ccEventReflection.cs" Line="23" Column="15" />
->>>>>>> 6f954f1fd55f29d3bf3640f35b662fa39079c9c7
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

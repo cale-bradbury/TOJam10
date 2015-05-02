@@ -14,7 +14,7 @@ public class ObjectScript : MonoBehaviour {
 	[HideInInspector]public Rigidbody body;
 
 	// Use this for initialization
-	void Start () {
+	public virtual void Start () {
 		Game.all.Add (this);
 		body = GetComponent<Rigidbody> ();
 		if (body == null) {
@@ -32,7 +32,7 @@ public class ObjectScript : MonoBehaviour {
 		Game.all.Remove (this);
 	}
 
-	public void Collect(Vector3 target){
+	public virtual void Collect(Vector3 target){
 		Messenger.Broadcast (onCollectEvent);
 		body.mass = 0;
 		body.isKinematic = true;

@@ -160,6 +160,7 @@
      <Compile Include="Assets\Scripts\scoreBoard.cs" />
      <Compile Include="Assets\Scripts\textBox.cs" />
      <Compile Include="Assets\SpawnManager.cs" />
+     <Compile Include="Assets\StickyObject.cs" />
      <Compile Include="Assets\VacScript.cs" />
      <Compile Include="Assets\ccEventRandomizeFloat.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
