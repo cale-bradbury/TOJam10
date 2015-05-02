@@ -163,6 +163,7 @@
      <Compile Include="Assets\StickyObject.cs" />
      <Compile Include="Assets\VacScript.cs" />
      <Compile Include="Assets\ccEventRandomizeFloat.cs" />
+     <Compile Include="Assets\trollObject.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\CampCultPack\Shaders\Tint.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
