@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;CROSS_PLATFORM_INPUT</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;CROSS_PLATFORM_INPUT</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -76,11 +76,13 @@
      <Compile Include="Assets\CampCultPack\Scripts\Events\KeyFullscreen.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\KeyLockMouse.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\MouseLockClick.cs" />
+     <Compile Include="Assets\CampCultPack\Scripts\Events\SpawnOnDestroy.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\TimeFireEvent.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\WarpOnKey.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventAnimateFloat.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventAnimatePosition.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventBase.cs" />
+     <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventDestroyObject.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventEnableObject.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventFieldBase.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Events\ccEventPosition.cs" />
@@ -148,7 +150,6 @@
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\Static.cs" />
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\TwoTone.cs" />
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\WebcamTexture.cs" />
-     <Compile Include="Assets\EventDestroyObject.cs" />
      <Compile Include="Assets\HOTween\_Demo\HOTweenDemoBrain.cs" />
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\Core\ABSHOTweenEditorElement.cs" />
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\HOTweenComponent.cs" />
@@ -156,7 +157,6 @@
      <Compile Include="Assets\ObjectScript.cs" />
      <Compile Include="Assets\Scripts\textBox.cs" />
      <Compile Include="Assets\SpawnManager.cs" />
-     <Compile Include="Assets\SpawnOnDestroy.cs" />
      <Compile Include="Assets\VacScript.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\CampCultPack\Shaders\Tint.shader" />
@@ -276,6 +276,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\CampCultPack\Shaders\PostFX\CCColorCorrection.shader" />
+     <None Include="Assets\Materials\DefaultItem.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
      <None Include="Assets\CampCultPack\Shaders\Blobs.shader" />
      <None Include="Assets\CampCultPack\Shaders\PostFX\TwoTone.shader" />
@@ -287,13 +288,13 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="HOTween">
- <HintPath>D:/Documents/TOJam10/TOJam10/Vac u me/Assets/HOTween/Plugins/HOTween.dll</HintPath>
+ <HintPath>C:/Users/Cale/Documents/GitHub/TOJam10/Vac u me/Assets/HOTween/Plugins/HOTween.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>D:/Program Files (x86)/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>C:/Program Files/Unity5/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

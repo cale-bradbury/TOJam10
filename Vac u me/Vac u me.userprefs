@@ -1,12 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\VacScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DefaultItem.shader">
     <Files>
-      <File FileName="Assets\CampCultPack\Scripts\Events\ccEventBase.cs" Line="16" Column="3" />
-      <File FileName="Assets\SpawnManager.cs" Line="31" Column="30" />
-      <File FileName="Assets\EventDestroyObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\SpawnOnDestroy.cs" Line="1" Column="1" />
-      <File FileName="Assets\VacScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\DefaultItem.shader" Line="4" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

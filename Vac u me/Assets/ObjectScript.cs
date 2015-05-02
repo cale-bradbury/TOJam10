@@ -17,6 +17,7 @@ public class ObjectScript : MonoBehaviour {
 		if (body == null) {
 			body = gameObject.AddComponent<Rigidbody>();
 		}
+		body.mass = weight;
 	}
 	
 	// Update is called once per frame

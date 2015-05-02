@@ -23,6 +23,7 @@ public class SpawnManager : MonoBehaviour {
 		spawned.Add (g);
 		g.GetComponent<Rigidbody> ().velocity = Random.onUnitSphere * spawnVelocity;
 		g.transform.parent = transform;
+		g.transform.localPosition = Vector3.zero;
 		haveSpawned++;
     }
 
