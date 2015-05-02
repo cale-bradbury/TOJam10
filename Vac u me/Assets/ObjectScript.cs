@@ -3,16 +3,18 @@ using System.Collections.Generic;
 
 public class ObjectScript : MonoBehaviour {
 
-	public static List<ObjectScript> all = new List<ObjectScript> ();
-
 	public float weight = 1;
 	public float value = 1;
+	public string onCollectEvent;
+
+	[HideInInspector]
+	public bool collected = false;
 
 	[HideInInspector]public Rigidbody body;
 
 	// Use this for initialization
 	void Start () {
-		all.Add (this);
+		Game.all.Add (this);
 		body = GetComponent<Rigidbody> ();
 		if (body == null) {
 			body = gameObject.AddComponent<Rigidbody>();
@@ -22,6 +24,15 @@ public class ObjectScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
+	}
+
+	void OnDestroy(){
+		Game.all.Remove (this);
+	}
+
+	public void Collect(){
+		Messenger.Broadcast (onCollectEvent);
+		Destroy (gameObject);
 	}
 }

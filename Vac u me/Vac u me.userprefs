@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DefaultItem.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ObjectScript.cs">
     <Files>
-      <File FileName="Assets\DefaultItem.shader" Line="4" Column="45" />
+      <File FileName="Assets\Materials\DefaultItem.shader" Line="30" Column="24" />
+      <File FileName="Assets\VacScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\ObjectScript.cs" Line="17" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

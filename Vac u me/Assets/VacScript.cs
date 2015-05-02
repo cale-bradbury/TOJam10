@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Holoville.HOTween;
 
 public class VacScript : MonoBehaviour {
 
@@ -10,10 +11,14 @@ public class VacScript : MonoBehaviour {
 
 	public float suctionPower = 1;
 
+	public float collectDistance = .5f;
 	public float moveDistancePerSecond = 10;
 	public float positionLerp = .1f;
 	Vector3 targetPosition;
 	float dir;
+
+	float money = 0;
+	float weight = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -27,9 +32,9 @@ public class VacScript : MonoBehaviour {
 	}
 
 	void MoveVac(){
-			
 		targetPosition.x += Input.GetAxis (horiAxis) * moveDistancePerSecond * Time.deltaTime;
 		targetPosition.z += Input.GetAxis (vertAxis) * moveDistancePerSecond * Time.deltaTime;
+		targetPosition.y = transform.position.y;
 		transform.position = Vector3.Lerp (transform.position, targetPosition, positionLerp);
 	}
 
@@ -40,11 +45,25 @@ public class VacScript : MonoBehaviour {
 		if (Input.GetButton (blowInput))
 			ndir -= 1;
 		dir = Mathf.Lerp (dir,ndir,.05f);
-		foreach (ObjectScript o in ObjectScript.all) {
-			float d = Vector3.Distance(transform.position,o.transform.position);
-			d = Mathf.Max(suctionPower-d,0)*ndir;
-			o.body.AddForce((transform.position-o.transform.position)*d);
+		foreach (ObjectScript o in Game.all) {
+			if(!o.collected&&dir>.7f){
+				float d = Vector3.Distance(transform.position,o.transform.position);
+				if(d<collectDistance){
+					Collect(o);
+				}
+				d = Mathf.Max(suctionPower-d,0)*ndir;
+				o.body.AddForce((transform.position-o.transform.position)*d);
+			}
 		}
 		Shader.SetGlobalVector("_vac",new Vector4(transform.position.x,transform.position.y,transform.position.z,Mathf.Max(0,suctionPower*dir)));
+	}
+
+	void Collect(ObjectScript o){
+		o.collected = true;
+		money += o.value;
+		weight += o.weight;
+		o.body.mass = 0;
+		o.body.isKinematic = true;
+		HOTween.To (o.transform, .5f, new TweenParms ().Prop("position",transform.position).OnComplete(o.Collect));
 	}
 }
