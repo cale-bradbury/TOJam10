@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: NES_Cartridge
     100002: //RootNode
+    100004: Plane002
     400000: NES_Cartridge
     400002: //RootNode
+    400004: Plane002
     2300000: NES_Cartridge
+    2300002: Plane002
     3300000: NES_Cartridge
+    3300002: Plane002
     4300000: NES_Cartridge
+    4300002: Plane002
   materials:
     importMaterials: 1
     materialName: 0

@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: LEGO_FLT_2_Piece
     100002: //RootNode
+    100004: LEGO_REG_2_Piece
     400000: LEGO_FLT_2_Piece
     400002: //RootNode
+    400004: LEGO_REG_2_Piece
     2300000: LEGO_FLT_2_Piece
+    2300002: LEGO_REG_2_Piece
     3300000: LEGO_FLT_2_Piece
+    3300002: LEGO_REG_2_Piece
     4300000: LEGO_FLT_2_Piece
+    4300002: LEGO_REG_2_Piece
   materials:
     importMaterials: 1
     materialName: 0

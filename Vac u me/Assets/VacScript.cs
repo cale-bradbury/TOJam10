@@ -59,11 +59,8 @@ public class VacScript : MonoBehaviour {
 	}
 
 	void Collect(ObjectScript o){
-		o.collected = true;
 		money += o.value;
 		weight += o.weight;
-		o.body.mass = 0;
-		o.body.isKinematic = true;
-		HOTween.To (o.transform, .5f, new TweenParms ().Prop("position",transform.position).OnComplete(o.Collect));
+		o.Collect (transform.position);
 	}
 }

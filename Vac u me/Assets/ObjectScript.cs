@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using Holoville.HOTween;
 
 public class ObjectScript : MonoBehaviour {
 
@@ -31,8 +32,15 @@ public class ObjectScript : MonoBehaviour {
 		Game.all.Remove (this);
 	}
 
-	public void Collect(){
+	public void Collect(Vector3 target){
 		Messenger.Broadcast (onCollectEvent);
+		body.mass = 0;
+		body.isKinematic = true;
+		o.collected = true;
+		HOTween.To (transform, .5f, new TweenParms ().Prop("position",target).OnComplete(Kill));
+	}
+
+	void Kill(){
 		Destroy (gameObject);
 	}
 }

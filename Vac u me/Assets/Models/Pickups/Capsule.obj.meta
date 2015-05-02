@@ -7,11 +7,21 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Capsule
     100002: //RootNode
+    100004: capsul01
+    100006: capsul02
     400000: Capsule
     400002: //RootNode
+    400004: capsul01
+    400006: capsul02
     2300000: Capsule
+    2300002: capsul01
+    2300004: capsul02
     3300000: Capsule
+    3300002: capsul01
+    3300004: capsul02
     4300000: Capsule
+    4300002: capsul01
+    4300004: capsul02
   materials:
     importMaterials: 1
     materialName: 0

@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Lolipop
     100002: //RootNode
+    100004: Object001
     400000: Lolipop
     400002: //RootNode
+    400004: Object001
     2300000: Lolipop
+    2300002: Object001
     3300000: Lolipop
+    3300002: Object001
     4300000: Lolipop
+    4300002: Object001
   materials:
     importMaterials: 1
     materialName: 0
