@@ -6,7 +6,11 @@ public class ccAnimateScale: MonoBehaviour {
 	public AnimationCurve scale;
 	public float phase;
 	public float phasePerSecond = 1f;
-	
+
+	void Start (){
+		Update ();
+	}
+
 	// Update is called once per frame
 	void Update () {
 		phase+=phasePerSecond*Time.deltaTime;
