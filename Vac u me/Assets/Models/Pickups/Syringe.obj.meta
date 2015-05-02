@@ -1,27 +1,26 @@
 fileFormatVersion: 2
 guid: 7f707b2b065f0964aba05d69cfbacd58
-timeCreated: 1430533520
-licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Syringe
-    100002: //RootNode
-    100004: Object003
-    100006: Object005
-    400000: Syringe
-    400002: //RootNode
-    400004: Object003
-    400006: Object005
-    2300000: Syringe
-    2300002: Object003
-    2300004: Object005
-    3300000: Syringe
-    3300002: Object003
-    3300004: Object005
-    4300000: Syringe
-    4300002: Object003
-    4300004: Object005
+    100000: Object003
+    100002: Object005
+    100004: Syringe
+    100006: //RootNode
+    400000: Object003
+    400002: Object005
+    400004: Syringe
+    400006: //RootNode
+    2300000: Object003
+    2300002: Object005
+    2300004: Syringe
+    3300000: Object003
+    3300002: Object005
+    3300004: Syringe
+    4300000: Object003
+    4300002: Object005
+    4300004: Syringe
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -41,7 +40,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .200000003
+    globalScale: 0
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -75,7 +74,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 
   assetBundleName: 

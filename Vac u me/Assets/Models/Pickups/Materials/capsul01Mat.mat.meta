@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 3c138653b03dcbb42a1ed47ccf0bc448
 timeCreated: 1430540309
 licenseType: Pro
+=======
+guid: ebe11ef60307bff4eb8fb169198c6810
+timeCreated: 1430539994
+licenseType: Free
+>>>>>>> origin/Kelvin_Branch
 NativeFormatImporter:
   userData: 
   assetBundleName: 
