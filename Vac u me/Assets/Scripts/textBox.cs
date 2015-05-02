@@ -78,12 +78,11 @@ public class textBox : ccEventBase {
 			}
 			
 		} else {
-			// TODO: scale up animation
 			Vector3 letterPos = transform.position;
 			letterPos.x = letterPos.x + (currLineWidth);
 			letterPos.y = letterPos.y - (lineHeight * (float)currentLineIndex);
 			GameObject l = (GameObject) Instantiate(letterMesh, letterPos, transform.rotation);
-			l.GetComponent<TextMesh>().text = letter.ToString();
+			l.GetComponentsInChildren<TextMesh>()[0].text = letter.ToString();
 			l.transform.parent = transform;
 			letterMeshes.Add(l);
 			
@@ -93,7 +92,6 @@ public class textBox : ccEventBase {
 	
 	void destroyAllLetterMeshes(){
 		if (letterMeshes.Count > 0) {
-			// TODO: scale them back down
 			
 			for (int i = 0; i < letterMeshes.Count; i++) {
 				Destroy(letterMeshes[i]);
