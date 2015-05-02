@@ -154,6 +154,7 @@
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\HOTweenComponent.cs" />
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\HOTweenManager.cs" />
      <Compile Include="Assets\ObjectScript.cs" />
+     <Compile Include="Assets\Scripts\scoreBoard.cs" />
      <Compile Include="Assets\Scripts\textBox.cs" />
      <Compile Include="Assets\SpawnManager.cs" />
      <Compile Include="Assets\SpawnOnDestroy.cs" />

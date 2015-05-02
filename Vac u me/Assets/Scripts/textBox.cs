@@ -65,12 +65,12 @@ public class textBox : ccEventBase {
 
 	void addCharacter(){
 		currentLetterIndex++;
+		Debug.Log (currentTextIndex);
+		Debug.Log (currentLetterIndex);
 		char letter = text[currentTextIndex][currentLetterIndex];
 		if(char.IsWhiteSpace(letter)){
 			
 			if(currLineWidth >= maxLineWidth){
-				// start a new line
-				Debug.Log ("Line width has been exceeded");
 				currentLineIndex++;
 				currLineWidth = 0;
 			} else {
@@ -82,7 +82,7 @@ public class textBox : ccEventBase {
 			letterPos.x = letterPos.x + (currLineWidth);
 			letterPos.y = letterPos.y - (lineHeight * (float)currentLineIndex);
 			GameObject l = (GameObject) Instantiate(letterMesh, letterPos, transform.rotation);
-			l.GetComponentsInChildren<TextMesh>()[0].text = letter.ToString();
+			l.GetComponentInChildren<TextMesh>().text = letter.ToString();
 			l.transform.parent = transform;
 			letterMeshes.Add(l);
 			
