@@ -13,6 +13,7 @@ public class VacScript : MonoBehaviour {
 	public float moveDistancePerSecond = 10;
 	public float positionLerp = .1f;
 	Vector3 targetPosition;
+	float dir;
 
 	// Use this for initialization
 	void Start () {
@@ -33,15 +34,17 @@ public class VacScript : MonoBehaviour {
 	}
 
 	void Suck(){
-		float dir = 0;
+		float ndir = 0;
 		if (Input.GetButton (suckInput))
-			dir += 1;
+			ndir += 1;
 		if (Input.GetButton (blowInput))
-			dir -= 1;
+			ndir -= 1;
+		dir = Mathf.Lerp (dir,ndir,.05f);
 		foreach (ObjectScript o in ObjectScript.all) {
 			float d = Vector3.Distance(transform.position,o.transform.position);
-			d = Mathf.Max(suctionPower-d,0)*dir;
+			d = Mathf.Max(suctionPower-d,0)*ndir;
 			o.body.AddForce((transform.position-o.transform.position)*d);
 		}
+		Shader.SetGlobalVector("_vac",new Vector4(transform.position.x,transform.position.y,transform.position.z,Mathf.Max(0,suctionPower*dir)));
 	}
 }

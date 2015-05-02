@@ -13,7 +13,7 @@
 				#pragma fragment frag
 				float4 _Color;
 				sampler2D _MainTex;
-				float4 _Vac; //xyz = vas pos - z =vac strength
+				float4 _vac; //xyz = vas pos - z =vac strength
 				
 				struct appdata {
 					float4 vertex : POSITION;
@@ -25,15 +25,18 @@
 				};
 				v2f vert(appdata v) {
 					v2f o;
-					v.vertex.x += sin(_freq.x*v.vertex.y+_phase.x*_Time.y)*_amp.x;
-					v.vertex.y += sin(_freq.y*v.vertex.z+_phase.y*_Time.y)*_amp.y;
-					v.vertex.z += sin(_freq.z*v.vertex.x+_phase.z*_Time.y)*_amp.z;
+					float4 world = mul (_Object2World, v.vertex);
+					float d = distance(world.xyz,_vac.xyz)/_vac.w;
+					d = max(0.0,1.0-d);
+					world.xyz = lerp(world.xyz,_vac.xyz,d);
+					v.vertex = mul (_World2Object, world);
+					
 					o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
 					o.uv = v.uv;
 					return o;
 				};
 				half4 frag(v2f i) : COLOR {
-					return texture2D(_MainTex,i.uv)*_Color;
+					return tex2D(_MainTex,i.uv)*_Color;
 				};
 				ENDCG
 	        }
