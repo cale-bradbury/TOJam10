@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class textBox : ccEventBase {
 
 	public string 			completeEvent; 			// event broadcasted on completion
-	public string[] 		text;					// text that will be iterated through
+	public List<string> 	text = new List<string>();					// text that will be iterated through
 	public string[] 		textEvents;
 	public GameObject		letterMesh; 			// Prefab
 	public float			letterWidth = 1f;
@@ -26,11 +26,13 @@ public class textBox : ccEventBase {
 		displayText ();
 	}
 
-	void displayText(){
+	public void displayText(){
 
 		incrementTextIndex ();
 
-		if (currentTextIndex < text.Length) {
+		Debug.Log (text.Count);
+
+		if (currentTextIndex < text.Count) {
 			destroyAllLetterMeshes();
 			instantiateLetterMeshes();
 			broadcastTextEvents();
@@ -65,12 +67,12 @@ public class textBox : ccEventBase {
 
 	void addCharacter(){
 		currentLetterIndex++;
+		Debug.Log (currentTextIndex);
+		Debug.Log (currentLetterIndex);
 		char letter = text[currentTextIndex][currentLetterIndex];
 		if(char.IsWhiteSpace(letter)){
 			
 			if(currLineWidth >= maxLineWidth){
-				// start a new line
-				Debug.Log ("Line width has been exceeded");
 				currentLineIndex++;
 				currLineWidth = 0;
 			} else {
@@ -82,7 +84,7 @@ public class textBox : ccEventBase {
 			letterPos.x = letterPos.x + (currLineWidth);
 			letterPos.y = letterPos.y - (lineHeight * (float)currentLineIndex);
 			GameObject l = (GameObject) Instantiate(letterMesh, letterPos, transform.rotation);
-			l.GetComponentsInChildren<TextMesh>()[0].text = letter.ToString();
+			l.GetComponentInChildren<TextMesh>().text = letter.ToString();
 			l.transform.parent = transform;
 			letterMeshes.Add(l);
 			
