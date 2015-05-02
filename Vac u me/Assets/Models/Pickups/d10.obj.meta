@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 95f44d68c8d12f845a95abc8190bb13f
-timeCreated: 1430587147
+guid: 218b60f446d79b346bb7856aeebc56fe
+timeCreated: 1430591199
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Filth
+    100000: Cone001
     100002: //RootNode
-    400000: Filth
+    400000: Cone001
     400002: //RootNode
-    2300000: Filth
-    3300000: Filth
-    4300000: Filth
+    2300000: Cone001
+    3300000: Cone001
+    4300000: Cone001
   materials:
     importMaterials: 1
     materialName: 0
@@ -31,7 +31,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
