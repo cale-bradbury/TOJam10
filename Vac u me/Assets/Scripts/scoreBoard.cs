@@ -3,10 +3,14 @@ using System.Collections;
 
 public class scoreBoard : MonoBehaviour {
 
-	public GameObject moneyScore;
-	public GameObject weightScore;
+	public GameObject moneyScorePrefab;
+	public GameObject weightScorePrefab;
+	public GameObject textBoxPefab;
 	public float lineHeight = 1;
 	public int scoreIncrementAmount = 10;
+
+	public int moneyScore = 0;
+	public int weightScore = 0;
 
 	private TextMesh moneyScoreText;
 	private bool isMoneyScoreText = false;
@@ -30,30 +34,41 @@ public class scoreBoard : MonoBehaviour {
 	}
 
 	void showMoneyScore(){
-		GameObject ms = (GameObject) Instantiate(moneyScore, transform.position, transform.rotation);
+		GameObject ms = (GameObject) Instantiate(moneyScorePrefab, transform.position, transform.rotation);
 		ms.transform.parent = transform;
+		createTextBox ("moneyScore", "Money", ms.transform);
 		moneyScoreText = ms.transform.Find("scoreText").gameObject.GetComponent<TextMesh>();
-		Messenger.Broadcast ("moneyScore");
 		isMoneyScoreText = true;
 	}
 
 	void showWeightScore(){
 		Vector3 wsPos = transform.position;
 		wsPos.y = wsPos.y - lineHeight;
-		GameObject ws = (GameObject) Instantiate(weightScore, wsPos, transform.rotation);
+		GameObject ws = (GameObject) Instantiate(weightScorePrefab, wsPos, transform.rotation);
 		ws.transform.parent = transform;
+		createTextBox ("weightScore", "Weight", ws.transform);
 		weightScoreText = ws.transform.Find("scoreText").gameObject.GetComponent<TextMesh>();
-		Messenger.Broadcast ("weightScore");
 		isWeightScoreText = true;
 	}
 
+	void createTextBox(string evtName, string textValue, Transform parent){
+		GameObject tb = (GameObject) Instantiate(textBoxPefab, transform.position, transform.rotation);
+		textBox tbTextBox = tb.GetComponent<textBox> ();
+		tbTextBox.eventName = evtName;
+		tbTextBox.text.Add (textValue);
+		tb.transform.parent = parent;	
+		tb.transform.localPosition = new Vector3 (0, 0, 0);
+
+		tbTextBox.displayText ();
+	}
+
 	void updateScoreText(){
-		if (isMoneyScoreText) {
+		if (isMoneyScoreText && incrementedMoneyScore < moneyScore) {
 			incrementedMoneyScore += scoreIncrementAmount;
 			moneyScoreText.text = incrementedMoneyScore.ToString();
 		}
 		
-		if (isWeightScoreText) {
+		if (isWeightScoreText && incrementedMoneyScore < weightScore) {
 			incrementedWeightScore += scoreIncrementAmount;
 			weightScoreText.text = incrementedWeightScore.ToString();
 		}

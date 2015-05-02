@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class textBox : ccEventBase {
 
 	public string 			completeEvent; 			// event broadcasted on completion
-	public string[] 		text;					// text that will be iterated through
+	public List<string> 	text = new List<string>();					// text that will be iterated through
 	public string[] 		textEvents;
 	public GameObject		letterMesh; 			// Prefab
 	public float			letterWidth = 1f;
@@ -26,11 +26,13 @@ public class textBox : ccEventBase {
 		displayText ();
 	}
 
-	void displayText(){
+	public void displayText(){
 
 		incrementTextIndex ();
 
-		if (currentTextIndex < text.Length) {
+		Debug.Log (text.Count);
+
+		if (currentTextIndex < text.Count) {
 			destroyAllLetterMeshes();
 			instantiateLetterMeshes();
 			broadcastTextEvents();
