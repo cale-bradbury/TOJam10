@@ -6,7 +6,15 @@ public class Game : MonoBehaviour {
 	public enum Type{
 		Food,
 		Drug,
-		Lego
+		Sex,
+		Lego,			// related to games
+		Games,
+		VideoGames,		// related to games + Nerdy + tech
+		Dnd,			// related to games + Nerdy
+		LARPing, 		// related to games + Nerdy
+		Nerdy,
+		Tech, 
+
 	}
 	public static string[] typeNames;
 
