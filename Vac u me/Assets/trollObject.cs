@@ -35,7 +35,7 @@ public class trollObject : ObjectScript {
 		gos = GameObject.FindGameObjectsWithTag ("Food");
 
 		if (gos.Length > 0) {
-			newTarget = gos [Random.Range (0, gos.Length - 1)];
+			newTarget = gos [Random.Range (0, gos.Length)];
 		} else {
 			newTarget = null;
 		}
