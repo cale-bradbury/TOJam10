@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88ffb0eb483e28498786310cbae1e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  types: 03000000
+  types: 0300000004000000
   weight: .400000006
   value: 150
   onCollectEvent: 
