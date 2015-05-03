@@ -61,14 +61,16 @@ public class VacScript : MonoBehaviour {
 			if (!o.collected ) {
 				if(dir > .7f){
 					float d = Vector3.Distance (transform.position, o.transform.position);
-					o.transform.localScale = Vector3.one * Mathf.Min (1, Mathf.Max (0, d - collectDistance) * 2);
+					if(o.GetType() == typeof(StickyObject)&&((StickyObject) o).stickiness>0){
+						((StickyObject) o).stickiness-= d;
+					}else{
+						o.transform.localScale = Vector3.one * Mathf.Min (1, Mathf.Max (0, d - collectDistance) * 2);
+					}
 					if (d < collectDistance) {
 						Collect (o);
 					}
 					d = Mathf.Lerp (1, 0, Mathf.Min (d / suctionDistance, 1)) * ndir * suctionPower;
-					if(o.GetType() == typeof(StickyObject)){
-						((StickyObject) o).stickiness-= d;
-					}
+
 					o.body.AddForce ((transform.position - o.transform.position) * d, ForceMode.Force);
 				} else {
 					o.transform.localScale = Vector3.one;

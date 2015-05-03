@@ -226,7 +226,7 @@ MonoBehaviour:
   onCollectEvent: 
   collected: 0
   body: {fileID: 0}
-  stickiness: 100
+  stickiness: 75
   childObject: {fileID: 130368}
 --- !u!1001 &100100000
 Prefab:
