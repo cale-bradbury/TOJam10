@@ -3,6 +3,12 @@ using System.Collections.Generic;
 
 public class missionManager : MonoBehaviour {
 
+	public CharacterManager characterManager;
+
+	int adjIndex;
+	int subIndex;
+	int actIndex;
+
 	private string[] adjective = new string[]
 	{
 		"a wild",
@@ -138,9 +144,8 @@ public class missionManager : MonoBehaviour {
 
 	string generateMissionText(){
 		string template = questTemplate [Random.Range (0, questTemplate.Length)];
-		int adjIndex = Random.Range (0, adjective.Length);
-		int subIndex = Random.Range (0, subject.Length);
-		int actIndex = Random.Range (0, activity.Length);
+
+		generateTextIndice ();
 
 		template = template.Replace ("{{adjective}}", adjective[adjIndex]);
 		template = template.Replace ("{{adjectiveOnly}}", adjectiveOnly[adjIndex]);
@@ -151,7 +156,12 @@ public class missionManager : MonoBehaviour {
 		return template;
 	}
 
-
+	void generateTextIndice(){
+		adjIndex = Random.Range (0, adjective.Length);
+		subIndex = Random.Range (0, subject.Length);
+		actIndex = Random.Range (0, activity.Length);
+	}
+	
 	void getItemType(){
 		// Create a list of gameObjects to send to spawners
 		// the list is determined by the level text selected

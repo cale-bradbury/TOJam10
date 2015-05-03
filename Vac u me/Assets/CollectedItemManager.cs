@@ -46,10 +46,6 @@ public class CollectedItemManager : MonoBehaviour {
 
 	void revealItem(GameObject newItem){
 
-		Vector3 newItemSize = newItem.GetComponent<Collider> ().bounds.size;
-		//Debug.Log (newItem.GetComponent<Collider> ());
-		Debug.Log (newItemSize);
-
 		// Set new first item
 		items.Insert (0, newItem);
 
