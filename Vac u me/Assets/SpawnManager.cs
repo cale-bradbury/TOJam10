@@ -21,7 +21,10 @@ public class SpawnManager : MonoBehaviour {
 	}
 	
 	void Spawn(){
-		GameObject g = Instantiate<ObjectScript>(objects[Mathf.FloorToInt(Random.value*objects.Count)]).gameObject;
+		int i = Mathf.FloorToInt (Random.value * objects.Count);
+		if (objects [i] == null)
+			objects [i] = Game.GetObjectOfType (Game.Type.General);
+		GameObject g = Instantiate<ObjectScript>(objects [i]).gameObject;
 		spawned.Add (g);
 		Rigidbody r = g.GetComponent<Rigidbody> ();
 		if (r == null)

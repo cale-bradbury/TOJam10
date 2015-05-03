@@ -7,6 +7,7 @@ public class CollectedItemManager : MonoBehaviour {
 
 	public Vector3 itemScale = new Vector3 (.2f, .2f, .2f);
 	public float itemRotateSpeed = 45f;
+	public string endgameEvent;
 
 	public GameObject testObj;
 
@@ -19,15 +20,14 @@ public class CollectedItemManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		Messenger.AddListener (endgameEvent, OnEnd);
 	}
 
-	void test(){
-		GameObject t = (GameObject) Instantiate(testObj, transform.position, transform.rotation);
-		t.GetComponent<trollObject> ().enabled = false;
-		Destroy (t.GetComponent<Rigidbody> ());
-		t.transform.localScale = Vector3.zero;
-		addItem (t);
+	void OnEnd(){
+		foreach (GameObject g in items) {
+			Destroy(g);
+		}
+		items.Clear ();
 	}
 	
 	// Update is called once per frame
@@ -78,8 +78,7 @@ public class CollectedItemManager : MonoBehaviour {
 
 		for (int i = 1; i < loopAmount; i++) {
 			int orbitIndex = orbitRing.all.Count - (i+1);
-			Vector3 target = orbitRing.all[orbitIndex].transform.localPosition;
-			HOTween.To(items[i].transform, .5f, new TweenParms ().Prop("localPosition",target));
+			items[i].transform.localPosition = Vector3.Lerp(items[i].transform.localPosition,orbitRing.all[orbitIndex].transform.localPosition,.05f);
 		}
 	}
 

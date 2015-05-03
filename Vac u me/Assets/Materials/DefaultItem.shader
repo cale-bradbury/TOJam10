@@ -9,6 +9,7 @@
 	Category{
 		Blend SrcAlpha OneMinusSrcAlpha
 		Tags {Queue = Transparent}
+		Cull Off
 	    SubShader {
 	        Pass {	            
 	            CGPROGRAM

@@ -180,8 +180,14 @@ public class missionManager : MonoBehaviour {
 		"I'm feelin pretty {{adjectiveOnly}} and my couch is a direct reflection of how I feel, please get to work so my {{subject}} {{activityOnly}} will go off with out a hitch."
 	};
 
+	GameObject cg;
+	
+	void OnDisable(){
+		Destroy (cg);
+	}
+
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
 		adjectiveOnly = removeFirstWords (adjective);
 		activityOnly = removeFirstWords (activity);
 
@@ -211,8 +217,9 @@ public class missionManager : MonoBehaviour {
 	void setUpNewMission(){
 
 		// init characterGroupPrefab
-		GameObject cg = (GameObject) Instantiate(characterGroupPrefab, new Vector3(-11.36f,-4.13f,-3.73f), transform.rotation);
-
+		cg = (GameObject) Instantiate(characterGroupPrefab, new Vector3(0,0,0), transform.rotation);
+		cg.transform.parent = transform;
+		cg.transform.localPosition = Vector3.zero;
 		// Gen Mission Text
 		string missionText = generateMissionText ();
 
@@ -220,7 +227,6 @@ public class missionManager : MonoBehaviour {
 		GameObject t = (GameObject) Instantiate(textBoxPrefab, cg.transform.position, transform.rotation);
 		t.transform.parent = cg.transform;
 		textBox tb = t.GetComponent<textBox> ();
-		tb.lineHeight = 2f;
 		tb.text.Add(missionText);
 		tb.displayText ();
 
@@ -228,8 +234,6 @@ public class missionManager : MonoBehaviour {
 		GameObject cm = (GameObject) Instantiate(characterPrefab, cg.transform.position, transform.rotation);
 		cm.transform.parent = cg.transform;
 		cm.GetComponent<CharacterManager> ().NewFace ();
-
-		cg.transform.eulerAngles = new Vector3(42f,0f,0f);
 	}
 
 	string generateMissionText(){

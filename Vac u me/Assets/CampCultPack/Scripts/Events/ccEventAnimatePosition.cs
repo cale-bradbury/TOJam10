@@ -19,10 +19,10 @@ public class ccEventAnimatePosition : ccEventBase {
 		if (animTime < time) {
 			animTime += Time.deltaTime;
 			if(animTime>time){
-				transform.position = animation.Evaluate(1)*multiplier;
+				transform.localPosition = animation.Evaluate(1)*multiplier;
 				Messenger.Broadcast(endEvent);
 			}else{
-				transform.position = animation.Evaluate(animTime/time)*multiplier;
+				transform.localPosition = animation.Evaluate(animTime/time)*multiplier;
 			}
 		}
 	}

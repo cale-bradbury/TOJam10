@@ -35,6 +35,7 @@ public class Game : MonoBehaviour {
 	bool allSpawned = false;
 	bool gameEnded = false;
 	public GameObject spawnHolder;
+	GameObject internalHolder;
 	List<SpawnManager> spawns;
 	public List<Type> spawnTypes;
 	public int differentObjects  = 4;
@@ -46,13 +47,18 @@ public class Game : MonoBehaviour {
 
 	void OnEnable(){
 		i = this;
+		gameEnded = allSpawned = allCollected= false;
+		spawnTypes = missionManager.missionTypes;
+		if (spawnTypes.Count == 0) {
+			spawnTypes.Add(Type.General);
+		}
 		typeNames = System.Enum.GetNames (typeof(Type));
 		allSpawned = false;
 		allCollected = false;
 		startTime = Time.time;
-		spawnHolder = Instantiate (spawnHolder);
-		spawnHolder.transform.parent = transform;
-		spawnHolder.transform.localPosition = Vector3.zero;
+		internalHolder = Instantiate (spawnHolder);
+		internalHolder.transform.parent = transform;
+		internalHolder.transform.localPosition = Vector3.zero;
 		spawns = new List<SpawnManager> ();
 
 		List<ObjectScript> g = new List<ObjectScript> ();
@@ -62,7 +68,7 @@ public class Game : MonoBehaviour {
 			Debug.Log (spawnTypes[0]+"  "+g[g.Count-1]);
 		}
 
-		foreach (SpawnManager s in spawnHolder.GetComponentsInChildren<SpawnManager>()) {
+		foreach (SpawnManager s in internalHolder.GetComponentsInChildren<SpawnManager>()) {
 			spawns.Add(s);
 			for (int j = 0; j<s.objects.Count; j++) {
 				s.objects[j] = g[0];
@@ -101,6 +107,7 @@ public class Game : MonoBehaviour {
 			return;
 		gameEnded = true;
 		Messenger.Broadcast (onEndGameEvent);
+		Destroy (internalHolder);
 	}
 
 	public static ObjectScript GetObjectOfType(Game.Type t){

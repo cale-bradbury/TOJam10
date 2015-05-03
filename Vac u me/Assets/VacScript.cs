@@ -18,6 +18,7 @@ public class VacScript : MonoBehaviour {
 	public GameObject suctionObject;
 	public float width = 10;
 	public float depth = 5;
+	public ReceiptText recipt;
 
 	public CollectedItemManager collectedItemManager;
 
@@ -65,6 +66,9 @@ public class VacScript : MonoBehaviour {
 						Collect (o);
 					}
 					d = Mathf.Lerp (1, 0, Mathf.Min (d / suctionDistance, 1)) * ndir * suctionPower;
+					if(o.GetType() == typeof(StickyObject)){
+						((StickyObject) o).stickiness-= d;
+					}
 					o.body.AddForce ((transform.position - o.transform.position) * d, ForceMode.Force);
 				} else {
 					o.transform.localScale = Vector3.one;
@@ -78,6 +82,7 @@ public class VacScript : MonoBehaviour {
 		o.Collect ();
 		if(o.collected){
 			GameObject g = o.gameObject;
+			recipt.addItemToText(o);
 			Destroy(o);
 			collectedItemManager.addItem(g);
 			Debug.Log(g.GetComponent<Collider>().bounds);

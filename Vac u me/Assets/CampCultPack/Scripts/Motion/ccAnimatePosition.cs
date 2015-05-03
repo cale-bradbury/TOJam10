@@ -10,6 +10,6 @@ public class ccAnimatePosition: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		phase+=phasePerSecond*Time.deltaTime;
-		transform.localPosition = axisMultiplier*position.Evaluate(phase%1.0f);
+		transform.localPosition = axisMultiplier*position.Evaluate(phase);
 	}
 }

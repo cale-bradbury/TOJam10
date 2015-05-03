@@ -89,7 +89,7 @@ Transform:
   m_GameObject: {fileID: 182506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.5999999, y: 100.099998, z: 26.8999996}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 461896}
   - {fileID: 485766}
@@ -256,7 +256,7 @@ MonoBehaviour:
   types: 0800000009000000
   weight: .5
   value: 800
-  onCollectEvent: 
+  onCollectEvent: onGlitch
   collected: 0
   body: {fileID: 0}
 --- !u!1001 &100100000
