@@ -1,4 +1,4 @@
-﻿Shader "Skybox/Gradient Skybox"
+﻿Shader "CampCult/Skybox/Spacebox"
 {
     Properties
     {
