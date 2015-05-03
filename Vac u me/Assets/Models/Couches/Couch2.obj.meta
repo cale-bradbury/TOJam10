@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 0594b07894e29244482460adb24b1fc8
-timeCreated: 1430672266
-licenseType: Pro
+guid: 78dbfb426c6fec64280f287f39c5d2fb
+timeCreated: 1430675807
+licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Vacuum_Tube
-    100004: Vacuum_Tube001
-    400000: //RootNode
-    400002: Vacuum_Tube
-    400004: Vacuum_Tube001
-    2300000: Vacuum_Tube
-    2300002: Vacuum_Tube001
-    3300000: Vacuum_Tube
-    3300002: Vacuum_Tube001
-    4300000: Vacuum_Tube
-    4300002: Vacuum_Tube001
+    100000: Couch2
+    100002: //RootNode
+    100004: PlaySurface
+    400000: Couch2
+    400002: //RootNode
+    400004: PlaySurface
+    2300000: Couch2
+    2300002: PlaySurface
+    3300000: Couch2
+    3300002: PlaySurface
+    4300000: Couch2
+    4300002: PlaySurface
   materials:
     importMaterials: 1
     materialName: 0

@@ -69,6 +69,10 @@ public class ArrayUtils
 		}
 		return false;
 	}
+
+	public static T getRandom<T>(T[] a){
+		return a [Mathf.FloorToInt (Random.value * a.Length)];
+	}
 	
 }
 

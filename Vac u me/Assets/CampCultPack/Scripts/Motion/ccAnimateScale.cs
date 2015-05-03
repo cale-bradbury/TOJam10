@@ -14,6 +14,6 @@ public class ccAnimateScale: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		phase+=phasePerSecond*Time.deltaTime;
-		transform.localScale = axisMultiplier*scale.Evaluate(phase%1.0f);
+		transform.localScale = axisMultiplier*scale.Evaluate(phase);
 	}
 }

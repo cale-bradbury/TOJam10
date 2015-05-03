@@ -153,11 +153,13 @@
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\WebcamTexture.cs" />
      <Compile Include="Assets\CharacterManager.cs" />
      <Compile Include="Assets\CollectedItemManager.cs" />
+     <Compile Include="Assets\CouchScript.cs" />
      <Compile Include="Assets\Game.cs" />
      <Compile Include="Assets\HOTween\_Demo\HOTweenDemoBrain.cs" />
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\Core\ABSHOTweenEditorElement.cs" />
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\HOTweenComponent.cs" />
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\HOTweenManager.cs" />
+     <Compile Include="Assets\NozzleScript.cs" />
      <Compile Include="Assets\ObjectScript.cs" />
      <Compile Include="Assets\Scripts\missionManager.cs" />
      <Compile Include="Assets\Scripts\scoreBoard.cs" />
