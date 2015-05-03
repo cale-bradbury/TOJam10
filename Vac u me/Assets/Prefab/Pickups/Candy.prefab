@@ -8,11 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 418340}
-  - 95: {fileID: 9547590}
   - 64: {fileID: 6410704}
+  - 114: {fileID: 11438666}
   m_Layer: 0
   m_Name: Candy
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,7 @@ Transform:
   m_GameObject: {fileID: 147370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 416894}
   m_Father: {fileID: 0}
@@ -100,25 +100,25 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: c42e680ab2b83834cbdc29fb3c5633cc, type: 3}
---- !u!95 &9547590
-Animator:
-  serializedVersion: 3
+--- !u!114 &11438666
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147370}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c42e680ab2b83834cbdc29fb3c5633cc, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88ffb0eb483e28498786310cbae1e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  types: 000000000b0000000a000000
+  weight: .200000003
+  value: 10
+  onCollectEvent: 
+  collected: 0
+  body: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

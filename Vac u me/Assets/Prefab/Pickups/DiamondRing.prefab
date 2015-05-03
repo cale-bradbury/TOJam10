@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   types: 02000000
   weight: 1.5
-  value: 9001
+  value: 1000
   onCollectEvent: onDiamondRing
   collected: 0
   body: {fileID: 0}
