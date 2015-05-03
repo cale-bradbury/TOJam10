@@ -80,6 +80,7 @@ public class VacScript : MonoBehaviour {
 			GameObject g = o.gameObject;
 			Destroy(o);
 			collectedItemManager.addItem(g);
+			Debug.Log(g.GetComponent<Collider>().bounds);
 		}
 	
 	}
