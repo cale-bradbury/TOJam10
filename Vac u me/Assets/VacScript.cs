@@ -55,7 +55,8 @@ public class VacScript : MonoBehaviour {
 			ndir -= 1;
 		dir = Mathf.Lerp (dir,ndir,.1f);
 		suctionObject.transform.localScale = Vector3.one * suctionDistance * dir;
-		foreach (ObjectScript o in Game.all) {
+		for(int i = Game.all.Count-1;i>=0;i--) {
+			ObjectScript o = Game.all[i];
 			if (!o.collected ) {
 				if(dir > .7f){
 					float d = Vector3.Distance (transform.position, o.transform.position);

@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 
 public class Game : MonoBehaviour {
+	public enum GameType{
+		Timed,
+		CollectAll
+	}
+	public GameType gameType = GameType.Timed;
+	public float completeTime;
+	float startTime;
 
 	public enum Type{
 		Food,
@@ -23,12 +30,13 @@ public class Game : MonoBehaviour {
 	public static Game i;
 	public List<ObjectScript>allPrefabs;
 
-	public string onAllCollectedEvent;
+	public string onEndGameEvent;
 	bool allCollected;
 
 
 	// Use this for initialization
 	void Start () {
+		startTime = Time.time;
 		if (i != null)
 			Debug.LogError ("ONLY ONE GAME SCRIPT");
 		i = this;
@@ -38,13 +46,21 @@ public class Game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (startTime + completeTime<Time.time) {
+			if(gameType==GameType.Timed)EndGame();
+		}
 		if (all.Count == 0 && !allCollected) {
 			allCollected = true;
-			Messenger.Broadcast (onAllCollectedEvent);
+			if(gameType == GameType.CollectAll)EndGame();
 		} else {
 			allCollected = false;
 		}
 	}
+
+	void EndGame(){
+		Messenger.Broadcast (onEndGameEvent);
+	}
+
 	public static ObjectScript GetObjectOfType(Game.Type t){
 		if (i == null)
 			return null;
