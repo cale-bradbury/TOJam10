@@ -420,12 +420,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - {fileID: 159264, guid: 01a8b057d9f166941bd99932d9a69ded, type: 2}
-  - {fileID: 144522, guid: 3ede894d8ecaf4f46a3220b3fb5566fd, type: 2}
-  - {fileID: 147704, guid: e7bd545e4df58804d9f917079bcc8dc0, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   count: 10
   delayPerObject: .100000001
   spawnVelocity: 1
+  allSpawned: 0
 --- !u!1001 &789023352
 Prefab:
   m_ObjectHideFlags: 0
@@ -668,6 +669,47 @@ MonoBehaviour:
   uvBase: {x: 0, y: 0}
   uvAnimationRate: {x: -.5, y: -.5}
   textureName: _MainTex
+--- !u!1 &1166016470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1166016472}
+  - 114: {fileID: 1166016471}
+  m_Layer: 0
+  m_Name: test_receipt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1166016471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1166016470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2170e3728edf48342af431a89e8e1de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReceiptTextMesh: {fileID: 143434, guid: 1e32dad9835410f408d8bd28530cda89, type: 2}
+  LineHeight: 1
+--- !u!4 &1166016472
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1166016470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.82241488, y: 3.37772799, z: -6.41972637}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &1188455302
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 43595e86a0ad9bc498d93f6449eb0a0a, type: 3}
   mirrors: 12
-  baseAngle: 305.460846
+  baseAngle: 320.346283
   basePerSecond: .5
   spinAngle: 0
   spinPerSecond: 0
@@ -1286,6 +1328,9 @@ MonoBehaviour:
   completeTime: 0
   allPrefabs: []
   onEndGameEvent: 
+  spawnHolder: {fileID: 0}
+  spawnTypes: 
+  differentObjects: 4
 --- !u!114 &1520755639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1616,12 +1661,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - {fileID: 159264, guid: 01a8b057d9f166941bd99932d9a69ded, type: 2}
-  - {fileID: 144522, guid: 3ede894d8ecaf4f46a3220b3fb5566fd, type: 2}
-  - {fileID: 147704, guid: e7bd545e4df58804d9f917079bcc8dc0, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   count: 10
   delayPerObject: .100000001
   spawnVelocity: 1
+  allSpawned: 0
 --- !u!114 &1994178834 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11443790, guid: e14a18f13fc22934fad8b43121e7a754,
