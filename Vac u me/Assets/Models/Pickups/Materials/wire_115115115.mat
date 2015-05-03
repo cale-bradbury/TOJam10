@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: wire_115115115
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 78778b6ef88fdb343b745dc29165b39c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -130,6 +130,10 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _HoloMode
+        second: 0
     m_Colors:
       data:
         first:
@@ -143,3 +147,11 @@ Material:
         first:
           name: _EmissionColorUI
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Holo
+        second: {r: 5, g: 3, b: 2, a: 1}
+      data:
+        first:
+          name: _HoloColor
+        second: {r: .0758621693, g: 1, b: 0, a: 1}
