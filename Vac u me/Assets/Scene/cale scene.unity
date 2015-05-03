@@ -1335,9 +1335,9 @@ MonoBehaviour:
   shader: {fileID: 4800000, guid: efdbf644eb59fe04c9f7f67cd9e88fe2, type: 3}
   staticMap: {fileID: 2800000, guid: 31f5a8611c4ed1245b18456206e798dc, type: 3}
   strength: 0
-  sample: 13.224185
+  sample: 23.9746971
   samplePerSecond: 1
-  y: 1.2724185
+  y: 2.34746909
   yPerSecond: .100000001
 --- !u!114 &2107509009
 MonoBehaviour:
@@ -1383,7 +1383,7 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  multiplier: 1
+  multiplier: .100000001
   time: .5
 --- !u!1 &2130432442
 GameObject:

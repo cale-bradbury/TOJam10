@@ -226,7 +226,7 @@ MonoBehaviour:
   types: 0500000008000000090000000a000000
   weight: 1
   value: 5
-  onCollectEvent: OnBattery
+  onCollectEvent: onGlitch
   collected: 0
   body: {fileID: 0}
 --- !u!136 &13665346
