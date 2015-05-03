@@ -32,17 +32,31 @@ public class Game : MonoBehaviour {
 
 	public string onEndGameEvent;
 	bool allCollected;
+	bool allSpawned = false;
 	bool gameEnded = false;
+	public GameObject spawnHolder;
+	List<SpawnManager> spawns;
 
 
 	// Use this for initialization
 	void Start () {
-		startTime = Time.time;
 		if (i != null)
 			Debug.LogError ("ONLY ONE GAME SCRIPT");
 		i = this;
 		typeNames = System.Enum.GetNames (typeof(Type));
-		Debug.Log (typeNames [0]);
+	}
+
+	void OnEnable(){
+		allSpawned = false;
+		allCollected = false;
+		startTime = Time.time;
+		spawnHolder = Instantiate (spawnHolder);
+		spawnHolder.transform.parent = transform;
+		spawnHolder.transform.localPosition = Vector3.zero;
+		spawns = new List<SpawnManager> ();
+		foreach (SpawnManager s in spawnHolder.GetComponentsInChildren<SpawnManager>()) {
+			spawns.Add(s);
+		}
 	}
 	
 	// Update is called once per frame
@@ -50,7 +64,18 @@ public class Game : MonoBehaviour {
 		if (startTime + completeTime<Time.time) {
 			if(gameType==GameType.Timed)EndGame();
 		}
-		if (all.Count == 0 && !allCollected) {
+		if (!allSpawned) {
+			bool safe = true;
+			foreach(SpawnManager s in spawns){
+				if(!s.allSpawned){
+					safe = false;
+					break;
+				}
+			}
+			allSpawned = safe;
+		}
+
+		if (all.Count == 0 && !allCollected && allSpawned) {
 			allCollected = true;
 			if(gameType == GameType.CollectAll)EndGame();
 		} else {

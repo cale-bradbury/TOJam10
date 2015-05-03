@@ -9,6 +9,7 @@ public class SpawnManager : MonoBehaviour {
 	public float spawnVelocity = 1;
 	List<GameObject> spawned;
 	int haveSpawned = 0;
+	[HideInInspector]public bool allSpawned = false;
 
 	// Use this for initialization
 	void OnEnable () {
@@ -16,6 +17,7 @@ public class SpawnManager : MonoBehaviour {
 		for (int i = 0; i<count; i++) {
 			Invoke("Spawn",i* delayPerObject);
 		}
+		allSpawned = false;
 	}
 	
 	void Spawn(){
@@ -30,11 +32,13 @@ public class SpawnManager : MonoBehaviour {
 		g.transform.localPosition = Vector3.zero;
 		Utils.ZeroChildPosition (g.transform);
 		haveSpawned++;
+		if (haveSpawned == count)
+			allSpawned = true;
     }
 
 	// Update is called once per frame
 	void Update () {
-		if (transform.childCount==0&&haveSpawned==count) {
+		if (transform.childCount==0&&allSpawned) {
 			Destroy(gameObject);
 		}
 		if (spawned.Count != 0&&spawned [0] == null) {

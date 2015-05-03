@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Attributes\CompactAttribute.cs" />
+     <Compile Include="Assets\CameraScript.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\ArrayUtils.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Callback.cs" />
      <Compile Include="Assets\CampCultPack\Scripts\Camera\CameraWorldParticleFix.cs" />

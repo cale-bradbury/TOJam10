@@ -58,6 +58,7 @@ GameObject:
   - 92: {fileID: 9213668}
   - 124: {fileID: 12434006}
   - 81: {fileID: 8184480}
+  - 114: {fileID: 11467336}
   - 114: {fileID: 11424066}
   - 114: {fileID: 11412986}
   - 114: {fileID: 11464388}
@@ -726,7 +727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 43595e86a0ad9bc498d93f6449eb0a0a, type: 3}
   mirrors: 12
-  baseAngle: 450.940582
+  baseAngle: 456.68399
   basePerSecond: .5
   spinAngle: 0
   spinPerSecond: 0
@@ -767,6 +768,26 @@ MonoBehaviour:
     m_PostInfinity: 2
   multiplier: .200000003
   time: 1
+--- !u!114 &11467336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a783be707d43bf74b9048031fe78cd43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - onGame
+  - onStory
+  - onEndGame
+  rotations:
+  - {x: 45, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  lerp: .100000001
 --- !u!114 &11467748
 MonoBehaviour:
   m_ObjectHideFlags: 1

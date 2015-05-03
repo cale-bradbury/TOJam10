@@ -1,6 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\NozzleScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CampCultPack\Scripts\Motion\ccAnimateScale.cs">
     <Files>
       <File FileName="Assets\Materials\DefaultItem.shader" Line="10" Column="3" />
       <File FileName="Assets\ObjectScript.cs" Line="1" Column="1" />
@@ -9,9 +9,12 @@
       <File FileName="Assets\Game.cs" Line="1" Column="1" />
       <File FileName="Assets\CampCultPack\Shaders\PostFX\RGBRotate.shader" Line="1" Column="1" />
       <File FileName="Assets\CharacterManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\CouchScript.cs" Line="10" Column="1" />
+      <File FileName="Assets\CouchScript.cs" Line="1" Column="1" />
       <File FileName="Assets\CampCultPack\Scripts\ArrayUtils.cs" Line="1" Column="1" />
-      <File FileName="Assets\NozzleScript.cs" Line="19" Column="26" />
+      <File FileName="Assets\NozzleScript.cs" Line="19" Column="8" />
+      <File FileName="Assets\CampCultPack\Shaders\PostFX\GlitchOffset.shader" Line="36" Column="10" />
+      <File FileName="Assets\CampCultPack\Shaders\PostFX\GlitchOffset.cs" Line="15" Column="99" />
+      <File FileName="Assets\CampCultPack\Scripts\Motion\ccAnimateScale.cs" Line="17" Column="61" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
