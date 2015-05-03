@@ -32,6 +32,9 @@ public class ReceiptText : MonoBehaviour {
 	void createNew3dText(string textValue){
 		GameObject t = (GameObject)Instantiate (ReceiptTextMesh, transform.position, transform.rotation);
 		allText.Insert (0,t);
+		if (allText.Count > 10) {
+			allText.RemoveAt(10);
+		}
 
 		TextMesh tm = t.GetComponent<TextMesh> ();
 		t.transform.parent = transform;

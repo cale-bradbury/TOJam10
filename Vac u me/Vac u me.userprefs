@@ -1,18 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Materials\DefaultItem.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CampCultPack\Scripts\Events\ccEventAnimatePosition.cs">
     <Files>
-      <File FileName="Assets\Materials\DefaultItem.shader" Line="63" Column="1" />
-      <File FileName="Assets\Game.cs" Line="125" Column="1" />
       <File FileName="Assets\CampCultPack\Shaders\PostFX\RGBRotate.shader" Line="1" Column="1" />
       <File FileName="Assets\CharacterManager.cs" Line="1" Column="1" />
       <File FileName="Assets\CouchScript.cs" Line="1" Column="1" />
       <File FileName="Assets\CampCultPack\Scripts\ArrayUtils.cs" Line="1" Column="1" />
       <File FileName="Assets\SpawnManager.cs" Line="52" Column="1" />
-      <File FileName="Assets\VacScript.cs" Line="91" Column="1" />
+      <File FileName="Assets\VacScript.cs" Line="93" Column="1" />
       <File FileName="Assets\Scripts\missionManager.cs" Line="272" Column="1" />
       <File FileName="Assets\CampCultPack\Scripts\Motion\ccAnimatePosition.cs" Line="16" Column="1" />
-      <File FileName="Assets\CollectedItemManager.cs" Line="90" Column="2" />
+      <File FileName="Assets\Scripts\ReceiptText.cs" Line="52" Column="1" />
+      <File FileName="Assets\CampCultPack\Scripts\Events\ccEventAnimatePosition.cs" Line="30" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

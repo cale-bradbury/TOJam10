@@ -226,6 +226,7 @@ public class missionManager : MonoBehaviour {
 		// Init dialog text box
 		GameObject t = (GameObject) Instantiate(textBoxPrefab, cg.transform.position, transform.rotation);
 		t.transform.parent = cg.transform;
+		t.transform.localPosition = new Vector3 (0, 0, -.1f);
 		textBox tb = t.GetComponent<textBox> ();
 		tb.text.Add(missionText);
 		tb.displayText ();
