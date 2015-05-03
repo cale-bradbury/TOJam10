@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   types: 000000000a000000
-  weight: 0
+  weight: .00999999978
   value: 1
   onCollectEvent: 
   collected: 0

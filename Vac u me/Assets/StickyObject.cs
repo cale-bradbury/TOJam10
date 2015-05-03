@@ -13,13 +13,16 @@ public class StickyObject : ObjectScript {
 	public override void Start(){
 		base.Start ();
 		body.constraints = RigidbodyConstraints.FreezeAll;
+		if (childObject == null)
+			childObject = transform.GetChild (0).gameObject;
 		//childObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 
 		addRandomPositionAnimation ();
 	}
 
 	void Update(){
-
+		if (stickiness < 0)
+			body.constraints = RigidbodyConstraints.None;
 		// Cancels animation shortly after this is no longer being sucked.
 		if (animRandom.enabled) {
 			if (Time.time - 0.05f > lastTimeSucked) {
@@ -38,7 +41,6 @@ public class StickyObject : ObjectScript {
 			animRandom.enabled = true;
 			stickiness -= 0.5f;
 		}
-		Debug.Log (lastTimeSucked);
 	}
 
 	//TODO: on collision with the ground freeze RigidbodyConstraints

@@ -65,6 +65,9 @@ public class VacScript : MonoBehaviour {
 						Collect (o);
 					}
 					d = Mathf.Lerp (1, 0, Mathf.Min (d / suctionDistance, 1)) * ndir * suctionPower;
+					if(o.GetType() == typeof(StickyObject)){
+						((StickyObject) o).stickiness-= d;
+					}
 					o.body.AddForce ((transform.position - o.transform.position) * d, ForceMode.Force);
 				} else {
 					o.transform.localScale = Vector3.one;
