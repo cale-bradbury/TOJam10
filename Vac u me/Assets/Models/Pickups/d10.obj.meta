@@ -1,7 +1,5 @@
 fileFormatVersion: 2
-guid: a4d8f0864cc1cd64186953131ad645ce
-timeCreated: 1430595344
-licenseType: Pro
+guid: 218b60f446d79b346bb7856aeebc56fe
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
@@ -12,6 +10,7 @@ ModelImporter:
     2300000: Cone001
     3300000: Cone001
     4300000: Cone001
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -31,7 +30,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .200000003
+    globalScale: 0
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -65,7 +64,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 
   assetBundleName: 
