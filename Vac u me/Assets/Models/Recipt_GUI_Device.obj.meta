@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: 803d17b2e7b093640816ec851d5d9067
-timeCreated: 1430618485
+guid: ab5fd347fc8168e48b7bff34ab77bc68
+timeCreated: 1430622934
 licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: COSMIC
-    100002: //RootNode
-    400000: COSMIC
-    400002: //RootNode
-    2300000: COSMIC
-    3300000: COSMIC
-    4300000: COSMIC
+    100000: Box007
+    100002: Cylinder002
+    100004: //RootNode
+    400000: Box007
+    400002: Cylinder002
+    400004: //RootNode
+    2300000: Box007
+    2300002: Cylinder002
+    3300000: Box007
+    3300002: Cylinder002
+    4300000: Box007
+    4300002: Cylinder002
   materials:
     importMaterials: 1
     materialName: 0
@@ -38,7 +43,7 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 0
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
