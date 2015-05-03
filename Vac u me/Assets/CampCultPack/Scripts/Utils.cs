@@ -29,7 +29,7 @@ public class Utils : MonoBehaviour {
 	public static List<T> RandomizeList<T> (List<T> list){
 		List<T> a = new List<T>();
 		while (list.Count!=0) {
-			int i = Mathf.Floor(Random.value*list.Count);
+			int i = Mathf.FloorToInt(Random.value*list.Count);
 			a.Add(list[i]);
 			list.RemoveAt(i);
 		}
