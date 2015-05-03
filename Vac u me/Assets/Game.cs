@@ -11,6 +11,8 @@ public class Game : MonoBehaviour {
 	public static string[] typeNames;
 
 	public static List<ObjectScript> all = new List<ObjectScript>();
+	public static Game i;
+	public List<GameObject>allPrefabs;
 
 	public string onAllCollectedEvent;
 	bool allCollected;
@@ -18,6 +20,9 @@ public class Game : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (i != null)
+			Debug.LogError ("ONLY ONE GAME SCRIPT");
+		i = this;
 		typeNames = System.Enum.GetNames (typeof(Type));
 		Debug.Log (typeNames [0]);
 	}
@@ -30,5 +35,10 @@ public class Game : MonoBehaviour {
 		} else {
 			allCollected = false;
 		}
+	}
+	public static GameObject GetObjectOfType(Game.Type t){
+		if (i == null)
+			return null;
+		//i.allPrefabs.
 	}
 }
