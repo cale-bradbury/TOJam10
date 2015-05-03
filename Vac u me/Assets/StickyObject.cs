@@ -28,11 +28,11 @@ public class StickyObject : ObjectScript {
 		}
 	}
 	
-	public override void Collect(Vector3 target){
+	public override void Collect(){
 
 		if (stickiness <= 0) {
 			animRandom.enabled = false;
-			base.Collect (target);
+			base.Collect ();
 		} else {
 			lastTimeSucked = Time.time;
 			animRandom.enabled = true;

@@ -35,12 +35,10 @@ public class ObjectScript : MonoBehaviour {
 		Game.all.Remove (this);
 	}
 
-	public virtual void Collect(Vector3 target){
+	public virtual void Collect(){
 		Messenger.Broadcast (onCollectEvent);
-		body.mass = 0;
-		body.isKinematic = true;
+		Destroy (body);
 		collected = true;
-		HOTween.To (transform, .5f, new TweenParms ().Prop("position",target).OnComplete(Kill));
 	}
 
 	void Kill(){
