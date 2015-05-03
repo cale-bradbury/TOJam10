@@ -36,17 +36,17 @@ public class Game : MonoBehaviour {
 	bool gameEnded = false;
 	public GameObject spawnHolder;
 	List<SpawnManager> spawns;
-
+	public List<Type> spawnTypes;
+	public int differentObjects  = 4;
 
 	// Use this for initialization
 	void Start () {
-		if (i != null)
-			Debug.LogError ("ONLY ONE GAME SCRIPT");
-		i = this;
-		typeNames = System.Enum.GetNames (typeof(Type));
+
 	}
 
 	void OnEnable(){
+		i = this;
+		typeNames = System.Enum.GetNames (typeof(Type));
 		allSpawned = false;
 		allCollected = false;
 		startTime = Time.time;
@@ -54,8 +54,21 @@ public class Game : MonoBehaviour {
 		spawnHolder.transform.parent = transform;
 		spawnHolder.transform.localPosition = Vector3.zero;
 		spawns = new List<SpawnManager> ();
+
+		List<ObjectScript> g = new List<ObjectScript> ();
+		for (int j = 0; j<differentObjects; j++) {
+			spawnTypes = Utils.RandomizeList<Type>(spawnTypes);
+			g.Add(GetObjectOfType(spawnTypes[0]));
+			Debug.Log (spawnTypes[0]+"  "+g[g.Count-1]);
+		}
+
 		foreach (SpawnManager s in spawnHolder.GetComponentsInChildren<SpawnManager>()) {
 			spawns.Add(s);
+			for (int j = 0; j<s.objects.Count; j++) {
+				s.objects[j] = g[0];
+				g.RemoveAt(0);
+				g.Add(s.objects[j]);
+			}
 		}
 	}
 	

@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 437694}
   - 114: {fileID: 11417298}
+  - 65: {fileID: 6502318}
   m_Layer: 0
   m_Name: LEGO_REG_4Piece
   m_TagString: Untagged
@@ -40,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.2532997, y: 53.311676, z: -25.3720779}
+  m_LocalPosition: {x: 0, y: 0, z: -29.1700001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 481420}
@@ -89,6 +90,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186058}
   m_Mesh: {fileID: 4300000, guid: a0da0cf087a41c047bdcd42ea14133b5, type: 3}
+--- !u!65 &6502318
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .419999987, y: .519999981, z: .25}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11417298
 MonoBehaviour:
   m_ObjectHideFlags: 1

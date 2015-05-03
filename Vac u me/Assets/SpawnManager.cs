@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class SpawnManager : MonoBehaviour {
 
-	public List<GameObject> objects;
+	public List<ObjectScript> objects;
 	public int count = 20;
 	public float delayPerObject = .1f;
 	public float spawnVelocity = 1;
@@ -21,7 +21,7 @@ public class SpawnManager : MonoBehaviour {
 	}
 	
 	void Spawn(){
-		GameObject g = Instantiate<GameObject>(objects[Mathf.FloorToInt(Random.value*objects.Count)]);
+		GameObject g = Instantiate<ObjectScript>(objects[Mathf.FloorToInt(Random.value*objects.Count)]).gameObject;
 		spawned.Add (g);
 		Rigidbody r = g.GetComponent<Rigidbody> ();
 		if (r == null)

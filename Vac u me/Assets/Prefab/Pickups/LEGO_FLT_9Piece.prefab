@@ -25,8 +25,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 443770}
-  - 64: {fileID: 6479624}
   - 114: {fileID: 11437162}
+  - 65: {fileID: 6529148}
   m_Layer: 0
   m_Name: LEGO_FLT_9Piece
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.2601357, y: 67.5835342, z: -5.23519516}
+  m_LocalPosition: {x: -3.64746094, y: -9855.48145, z: -32.2231789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 495308}
@@ -90,8 +90,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119206}
   m_Mesh: {fileID: 4300000, guid: 3e6b783fbc80e5649a0e59c03daa7dea, type: 3}
---- !u!64 &6479624
-MeshCollider:
+--- !u!65 &6529148
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -100,8 +100,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 3e6b783fbc80e5649a0e59c03daa7dea, type: 3}
+  m_Size: {x: .449999988, y: 1.49000001, z: .159999996}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11437162
 MonoBehaviour:
   m_ObjectHideFlags: 1
