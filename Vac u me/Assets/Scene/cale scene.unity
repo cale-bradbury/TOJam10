@@ -199,14 +199,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11434348, guid: c2223aee4a17ab34bbdd9c70580d63d9, type: 2}
+      propertyPath: collectedItemManager
+      value: 
+      objectReference: {fileID: 1198126517}
     - target: {fileID: 11429136, guid: c2223aee4a17ab34bbdd9c70580d63d9, type: 2}
       propertyPath: lookTarget
       value: 
       objectReference: {fileID: 1749823393}
-    - target: {fileID: 11434348, guid: c2223aee4a17ab34bbdd9c70580d63d9, type: 2}
-      propertyPath: collectedItemManager
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2223aee4a17ab34bbdd9c70580d63d9, type: 2}
   m_IsPrefabParent: 0
@@ -513,6 +513,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1188455302}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1198126517 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11423750, guid: a704c5ddc42a31e4eaf1a211f87f5f22,
+    type: 2}
+  m_PrefabInternal: {fileID: 455807962}
+  m_Script: {fileID: 11500000, guid: 030ca2dfc02ea9140bf77bbbdb918a50, type: 3}
 --- !u!1 &1202637817
 GameObject:
   m_ObjectHideFlags: 0
