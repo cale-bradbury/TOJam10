@@ -231,7 +231,7 @@ MonoBehaviour:
   all: []
   direction: 1
   radius: .670000017
-  phase: 4.5
+  phase: 5
 --- !u!114 &11443790
 MonoBehaviour:
   m_ObjectHideFlags: 1
