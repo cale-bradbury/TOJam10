@@ -17,6 +17,7 @@ public class ObjectScript : MonoBehaviour {
 
 	// Use this for initialization
 	public virtual void Start () {
+
 		Game.all.Add (this);
 		body = GetComponent<Rigidbody> ();
 		if (body == null) {
@@ -27,22 +28,16 @@ public class ObjectScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	void OnDestroy(){
 		Game.all.Remove (this);
 	}
 
-	public virtual void Collect(Vector3 target){
+	public virtual void Collect(){
 		Messenger.Broadcast (onCollectEvent);
-		body.mass = 0;
-		body.isKinematic = true;
+		Destroy (body);
 		collected = true;
-		HOTween.To (transform, .5f, new TweenParms ().Prop("position",target).OnComplete(Kill));
-	}
-
-	void Kill(){
-		Destroy (gameObject);
 	}
 }

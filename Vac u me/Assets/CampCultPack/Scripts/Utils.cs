@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
 
 public class Utils : MonoBehaviour {
@@ -23,5 +24,16 @@ public class Utils : MonoBehaviour {
 		for(int i = 0; i<transform.childCount;i++){
 			ZeroChildPosition(transform.GetChild(i));
 		}
+	}
+
+	public static List<T> RandomizeList<T> (List<T> list){
+		List<T> a = new List<T>();
+		while (list.Count!=0) {
+			int i = Mathf.FloorToInt(Random.value*list.Count);
+			a.Add(list[i]);
+			list.RemoveAt(i);
+		}
+		list = null;
+		return a;
 	}
 }

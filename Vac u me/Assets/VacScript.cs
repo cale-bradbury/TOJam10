@@ -71,8 +71,12 @@ public class VacScript : MonoBehaviour {
 	}
 
 	void Collect(ObjectScript o){
-		money += o.value;
-		weight += o.weight;
-		o.Collect (transform.position);
+		o.Collect ();
+		if(o.collected){
+			GameObject g = o.gameObject;
+			Destroy (o);
+			//send g to func
+		}
+
 	}
 }
