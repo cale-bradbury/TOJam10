@@ -426,6 +426,7 @@ MonoBehaviour:
   count: 10
   delayPerObject: .100000001
   spawnVelocity: 1
+  allSpawned: 0
 --- !u!1001 &789023352
 Prefab:
   m_ObjectHideFlags: 0
@@ -846,7 +847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 43595e86a0ad9bc498d93f6449eb0a0a, type: 3}
   mirrors: 12
-  baseAngle: 234.837555
+  baseAngle: 287.464203
   basePerSecond: .5
   spinAngle: 0
   spinPerSecond: 0
@@ -1268,6 +1269,7 @@ MonoBehaviour:
   completeTime: 0
   allPrefabs: []
   onEndGameEvent: 
+  spawnHolder: {fileID: 0}
 --- !u!1 &1542609910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,7 +1446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1885112056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,6 +1592,7 @@ MonoBehaviour:
   count: 10
   delayPerObject: .100000001
   spawnVelocity: 1
+  allSpawned: 0
 --- !u!114 &1994178834 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11443790, guid: e14a18f13fc22934fad8b43121e7a754,
