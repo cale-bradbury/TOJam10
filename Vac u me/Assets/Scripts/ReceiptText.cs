@@ -23,6 +23,7 @@ public class ReceiptText : MonoBehaviour {
 
 	public void addItemToText(ObjectScript o){
 		string itemText = o.gameObject.name.ToString() + " - " + o.value.ToString();
+		itemText =  itemText.Replace ("(Clone)", "");
 		valueText.Insert (0,itemText);
 		Debug.Log (itemText);
 		createNew3dText (itemText);

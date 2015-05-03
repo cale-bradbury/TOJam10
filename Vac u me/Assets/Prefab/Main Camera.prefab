@@ -33,7 +33,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &119010
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -65,6 +65,21 @@ GameObject:
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &134358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 480622}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,7 +288,7 @@ Transform:
   - {fileID: 414964}
   - {fileID: 484104}
   - {fileID: 480460}
-  - {fileID: 447586}
+  - {fileID: 480622}
   - {fileID: 461548}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -296,12 +311,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119010}
   m_LocalRotation: {x: -.285792559, y: -.270724207, z: -7.17714429e-05, w: .919255674}
-  m_LocalPosition: {x: -11.6999998, y: 5.42999983, z: 13.4499998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 400232}
-  m_Father: {fileID: 421090}
-  m_RootOrder: 4
+  m_Father: {fileID: 480622}
+  m_RootOrder: 0
 --- !u!4 &460164
 Transform:
   m_ObjectHideFlags: 1
@@ -376,6 +391,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 421090}
   m_RootOrder: 3
+--- !u!4 &480622
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.56000042, y: 3.8599999, z: 11.6999998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 447586}
+  m_Father: {fileID: 421090}
+  m_RootOrder: 4
 --- !u!4 &484104
 Transform:
   m_ObjectHideFlags: 1
@@ -427,7 +455,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197010}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_Materials:
   - {fileID: 2100000, guid: 75221c35d97f5124681f971d4dffc536, type: 2}
@@ -451,7 +479,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142576}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_Materials:
   - {fileID: 2100000, guid: 11452b371be69424d887d5de00d8d983, type: 2}
@@ -728,7 +756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 43595e86a0ad9bc498d93f6449eb0a0a, type: 3}
   mirrors: 12
-  baseAngle: 458.346558
+  baseAngle: 469.970856
   basePerSecond: .5
   spinAngle: 0
   spinPerSecond: 0
