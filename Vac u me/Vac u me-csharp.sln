@@ -29,13 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																					GlobalSection(MonoDevelopProperties) = preSolution
-=======
-									GlobalSection(MonoDevelopProperties) = preSolution
->>>>>>> origin/Kelvin_Branch
-=======
-						GlobalSection(MonoDevelopProperties) = preSolution
->>>>>>> 4de24d035a96944ab82b23962d24d627501cb018
+		GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
