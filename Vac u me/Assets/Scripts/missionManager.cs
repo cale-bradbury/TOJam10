@@ -46,23 +46,23 @@ public class missionManager : MonoBehaviour {
 		{Game.Type.General, Game.Type.Drug}
 	};
 
-	private object[,] subject = new object[,]
+	private string[] subject = new string[]
 	{
-		{"GameBoy"},
-		{"chips 'n dip"},
-		{"arts and crafts"},
-		{"Lego"},
-		{"sex"},
-		{"heroin"},
-		{"swingers"},
-		{"D&D"},
-		{"LARPing"},
-		{"candy"},
-		{"Netflix"},
-		{"video games"},
-		{"fecal"},
-		{"anime"},
-		{"coding"}
+		"GameBoy",
+		"chips 'n dip",
+		"arts and crafts",
+		"Lego",
+		"sex",
+		"heroin",
+		"swingers",
+		"D&D",
+		"LARPing",
+		"candy",
+		"Netflix",
+		"video games",
+		"fecal",
+		"anime",
+		"coding"
 	};
 
 	private string[] activity = new string[]
@@ -85,19 +85,18 @@ public class missionManager : MonoBehaviour {
 		"a dance-off",
 		"a chill sesh",
 		"a ball",
-		"crusade",
-		""
+		"a crusade"
 	};
 
-	private string[] activityAlone;
+	private string[] activityOnly;
 
 	private string[] questTemplate = new string[]
 	{
-		"Last night's {{adjectiveAlone}} {{subject}} {{activityAlone}} has left the couch is a mess. Soon my mother will be here to visit, can you help me clean it? She will be here in 27 seconds.",
-		"I am going to be hosting {{adjective}} {{activityAlone}} tonight, and I need this couch to be spotless.",
-		"We had a bit of {{adjective}} {{subject}} {{activityAlone}}. Now the couch reeks and I don't know who else to turn to. Can you help me?",
-		"Now that the monthly {{adjectiveOnly}} {{subject}} {{activityAlone}} has come to a close, I am in need of expertise.",
-		"A bachelor is {{adjective}} man who comes to work each morning from a different {{activityAlone}}. I am a bachelor. I have no time to clean couches.",
+		"Last night's {{adjectiveOnly}} {{subject}} {{activityOnly}} has left the couch is a mess. Soon my mother will be here to visit, can you help me clean it? She will be here in 27 seconds.",
+		"I am going to be hosting {{adjective}} {{activityOnly}} tonight, and I need this couch to be spotless.",
+		"We had a bit of {{adjective}} {{subject}} {{activityOnly}}. Now the couch reeks and I don't know who else to turn to. Can you help me?",
+		"Now that the monthly {{adjectiveOnly}} {{subject}} {{activityOnly}} has come to a close, I am in need of expertise.",
+		"I am a bachelor. A bachelor is {{adjective}} man who comes to work each morning from a different {{activityOnly}}.  I do not have time to clean couches, so you have to do it.",
 		"You can take the {{subject}} out of the couch, but you can't take the couch out of the {{subject}}.",
 		"There was {{activity}}... {{subject}} everywhere.... The couch.... Please help.",
 		"For the past 33 years, I have looked in the mirror every morning and asked myself: 'If today were the last day of my life, would I want to do what I am about to do today?' And whenever the answer has been 'No' for too many days in a row, I know I need to hire someone to clean my couch."
@@ -107,7 +106,7 @@ public class missionManager : MonoBehaviour {
 	void Start () {
 
 		adjectiveOnly = removeFirstWords (adjective);
-		activityAlone = removeFirstWords (activity);
+		activityOnly = removeFirstWords (activity);
 
 		Debug.Log (generateMissionText ());
 		Debug.Log (generateMissionText ());
@@ -139,12 +138,15 @@ public class missionManager : MonoBehaviour {
 
 	string generateMissionText(){
 		string template = questTemplate [Random.Range (0, questTemplate.Length)];
+		int adjIndex = Random.Range (0, adjective.Length);
+		int subIndex = Random.Range (0, subject.Length);
+		int actIndex = Random.Range (0, activity.Length);
 
-		template = template.Replace ("{{adjective}}", adjective [Random.Range (0, adjective.Length)]);
-		template = template.Replace ("{{adjectiveOnly}}", adjectiveOnly [Random.Range (0, adjectiveOnly.Length)]);
-		template = template.Replace ("{{subject}}", (string)subject [Random.Range (0, subject.Length),0]);
-		template = template.Replace ("{{activity}}", activity [Random.Range (0, activity.Length)]);
-		template = template.Replace ("{{activityAlone}}", activityAlone [Random.Range (0, activityAlone.Length)]);
+		template = template.Replace ("{{adjective}}", adjective[adjIndex]);
+		template = template.Replace ("{{adjectiveOnly}}", adjectiveOnly[adjIndex]);
+		template = template.Replace ("{{subject}}", subject [subIndex]);
+		template = template.Replace ("{{activity}}", activity [actIndex]);
+		template = template.Replace ("{{activityOnly}}", activityOnly [actIndex]);
 
 		return template;
 	}
@@ -155,6 +157,11 @@ public class missionManager : MonoBehaviour {
 		// the list is determined by the level text selected
 		// Game.getObjectOfType ("type").gameObject;
 	}
+
+
+
+
+	// this class will spawn and control the character
 }
 
 
