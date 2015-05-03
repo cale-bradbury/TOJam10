@@ -151,6 +151,7 @@
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\Static.cs" />
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\TwoTone.cs" />
      <Compile Include="Assets\CampCultPack\Shaders\PostFX\WebcamTexture.cs" />
+     <Compile Include="Assets\CollectedItemManager.cs" />
      <Compile Include="Assets\Game.cs" />
      <Compile Include="Assets\HOTween\_Demo\HOTweenDemoBrain.cs" />
      <Compile Include="Assets\Holoville\HOTween Extensions\HOTweenManager\Core\ABSHOTweenEditorElement.cs" />
