@@ -3,6 +3,16 @@ using System.Collections.Generic;
 
 public class missionManager : MonoBehaviour {
 
+	public GameObject characterGroupPrefab;
+	public GameObject characterPrefab;
+	public GameObject textBoxPrefab;
+
+	[HideInInspector]public static List<Game.Type> missionTypes = new List<Game.Type> ();
+
+	int adjIndex;
+	int subIndex;
+	int actIndex;
+
 	private string[] adjective = new string[]
 	{
 		"a wild",
@@ -26,43 +36,61 @@ public class missionManager : MonoBehaviour {
 
 	private string[] adjectiveOnly;
 
-	private Game.Type[,] adjectiveTypes = new Game.Type[,]{
-		{Game.Type.General, Game.Type.Sex, Game.Type.Food},
-		{Game.Type.General, Game.Type.Tech},
-		{Game.Type.General, Game.Type.Sex},
-		{Game.Type.General, Game.Type.Nerdy},
-		{Game.Type.Drug, Game.Type.Sex, Game.Type.Games},
-		{Game.Type.General, Game.Type.Dirty},
-		{Game.Type.General, Game.Type.Drug, Game.Type.VideoGames},
-		{Game.Type.General, Game.Type.VideoGames, Game.Type.Nerdy, Game.Type.Tech},
-		{Game.Type.General, Game.Type.Games, Game.Type.VideoGames, Game.Type.Dnd, Game.Type.LARPing, Game.Type.Nerdy},
-		{Game.Type.General},
-		{Game.Type.General, Game.Type.Dirty},
-		{Game.Type.General, Game.Type.Drug, Game.Type.Sex},
-		{Game.Type.General, Game.Type.Food, Game.Type.Drug, Game.Type.VideoGames},
-		{Game.Type.General, Game.Type.Nerdy},
-		{Game.Type.General, Game.Type.Drug, Game.Type.Sex, Game.Type.LARPing},
-		{Game.Type.General, Game.Type.Food},
-		{Game.Type.General, Game.Type.Drug}
+	private Game.Type[][] adjectiveTypes = new Game.Type[][]{
+		new Game.Type[] {Game.Type.General, Game.Type.Sex, Game.Type.Food},
+		new Game.Type[] {Game.Type.General, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy},
+		new Game.Type[] {Game.Type.Drug, Game.Type.Sex, Game.Type.Games},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.VideoGames, Game.Type.Nerdy, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Games, Game.Type.VideoGames, Game.Type.Dnd, Game.Type.LARPing, Game.Type.Nerdy},
+		new Game.Type[] {Game.Type.General},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Food, Game.Type.Drug, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Sex, Game.Type.LARPing},
+		new Game.Type[] {Game.Type.General, Game.Type.Food},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug}
 	};
 
-	private object[,] subject = new object[,]
+	private string[] subject = new string[]
 	{
-		{"GameBoy"},
-		{"chips 'n dip"},
-		{"arts and crafts"},
-		{"Lego"},
-		{"sex"},
-		{"heroin"},
-		{"swingers"},
-		{"D&D"},
-		{"LARPing"},
-		{"candy"},
-		{"Netflix"},
-		{"video games"},
-		{"fecal"},
-		{"anime"},
-		{"coding"}
+		"GameBoy",
+		"chips 'n dip",
+		"arts and crafts",
+		"Lego",
+		"sex",
+		"heroin",
+		"swingers",
+		"D&D",
+		"LARPing",
+		"candy",
+		"Netflix",
+		"video games",
+		"fecal",
+		"anime",
+		"coding"
+	};
+
+	private Game.Type[][] subjectTypes = new Game.Type[][]{
+		new Game.Type[] {Game.Type.General, Game.Type.VideoGames, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Food, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Drug},
+		new Game.Type[] {Game.Type.General, Game.Type.Lego, Game.Type.Games},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug},
+		new Game.Type[] {Game.Type.General, Game.Type.Sex, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Games, Game.Type.Dnd, Game.Type.LARPing, Game.Type.Nerdy},
+		new Game.Type[] {Game.Type.General, Game.Type.Games, Game.Type.Dnd, Game.Type.LARPing, Game.Type.Nerdy},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Drug, Game.Type.Food},
+		new Game.Type[] {Game.Type.General, Game.Type.Food, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Drug, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Drug, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Tech}
 	};
 
 	private string[] activity = new string[]
@@ -85,19 +113,40 @@ public class missionManager : MonoBehaviour {
 		"a dance-off",
 		"a chill sesh",
 		"a ball",
-		"crusade",
-		""
+		"a crusade"
 	};
 
-	private string[] activityAlone;
+	private string[] activityOnly;
+
+	private Game.Type[][] activityTypes = new Game.Type[][]{
+		new Game.Type[] {Game.Type.General, Game.Type.Sex, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Sex, Game.Type.Food, Game.Type.Games},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Games},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Sex, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General},
+		new Game.Type[] {Game.Type.General},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Tech, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.LARPing, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.LARPing, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General}
+	};
 
 	private string[] questTemplate = new string[]
 	{
-		"Last night's {{adjectiveAlone}} {{subject}} {{activityAlone}} has left the couch is a mess. Soon my mother will be here to visit, can you help me clean it? She will be here in 27 seconds.",
-		"I am going to be hosting {{adjective}} {{activityAlone}} tonight, and I need this couch to be spotless.",
-		"We had a bit of {{adjective}} {{subject}} {{activityAlone}}. Now the couch reeks and I don't know who else to turn to. Can you help me?",
-		"Now that the monthly {{adjectiveOnly}} {{subject}} {{activityAlone}} has come to a close, I am in need of expertise.",
-		"A bachelor is {{adjective}} man who comes to work each morning from a different {{activityAlone}}. I am a bachelor. I have no time to clean couches.",
+		"Last night's {{adjectiveOnly}} {{subject}} {{activityOnly}} has left the couch a mess. Soon my mother will be here to visit, can you help me clean it? She will be here in 27 seconds.",
+		"I am going to be hosting {{adjective}} {{activityOnly}} tonight, and I need this couch to be spotless.",
+		"We had a bit of {{adjective}} {{subject}} {{activityOnly}}. Now the couch reeks and I don't know who else to turn to. Can you help me?",
+		"Now that the monthly {{adjectiveOnly}} {{subject}} {{activityOnly}} has come to a close, I am in need of expertise.",
+		"I am a bachelor. A bachelor is {{adjective}} man who comes to work each morning from a different {{activityOnly}}.  I do not have time to clean couches, so you have to do it.",
 		"You can take the {{subject}} out of the couch, but you can't take the couch out of the {{subject}}.",
 		"There was {{activity}}... {{subject}} everywhere.... The couch.... Please help.",
 		"For the past 33 years, I have looked in the mirror every morning and asked myself: 'If today were the last day of my life, would I want to do what I am about to do today?' And whenever the answer has been 'No' for too many days in a row, I know I need to hire someone to clean my couch."
@@ -105,16 +154,10 @@ public class missionManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		adjectiveOnly = removeFirstWords (adjective);
-		activityAlone = removeFirstWords (activity);
+		activityOnly = removeFirstWords (activity);
 
-		Debug.Log (generateMissionText ());
-		Debug.Log (generateMissionText ());
-		Debug.Log (generateMissionText ());
-		Debug.Log (generateMissionText ());
-		Debug.Log (generateMissionText ());
-		Debug.Log (generateMissionText ());
+		setUpNewMission ();
 	}
 	
 	// Update is called once per frame
@@ -137,24 +180,75 @@ public class missionManager : MonoBehaviour {
 		return newPhrases;
 	}
 
+	void setUpNewMission(){
+
+		// init characterGroupPrefab
+		GameObject cg = (GameObject) Instantiate(characterGroupPrefab, new Vector3(-11.36f,-4.13f,-3.73f), transform.rotation);
+
+		// Gen Mission Text
+		string missionText = generateMissionText ();
+
+		// Init dialog text box
+		GameObject t = (GameObject) Instantiate(textBoxPrefab, cg.transform.position, transform.rotation);
+		t.transform.parent = cg.transform;
+		textBox tb = t.GetComponent<textBox> ();
+		tb.lineHeight = 2f;
+		tb.text.Add(missionText);
+		tb.displayText ();
+
+		// init characterPrefab 
+		GameObject cm = (GameObject) Instantiate(characterPrefab, cg.transform.position, transform.rotation);
+		cm.transform.parent = cg.transform;
+		cm.GetComponent<CharacterManager> ().NewFace ();
+
+		cg.transform.eulerAngles = new Vector3(42f,0f,0f);
+	}
+
 	string generateMissionText(){
 		string template = questTemplate [Random.Range (0, questTemplate.Length)];
 
-		template = template.Replace ("{{adjective}}", adjective [Random.Range (0, adjective.Length)]);
-		template = template.Replace ("{{adjectiveOnly}}", adjectiveOnly [Random.Range (0, adjectiveOnly.Length)]);
-		template = template.Replace ("{{subject}}", (string)subject [Random.Range (0, subject.Length),0]);
-		template = template.Replace ("{{activity}}", activity [Random.Range (0, activity.Length)]);
-		template = template.Replace ("{{activityAlone}}", activityAlone [Random.Range (0, activityAlone.Length)]);
+		generateTextIndice ();
+
+		template = template.Replace ("{{adjective}}", adjective[adjIndex]);
+		template = template.Replace ("{{adjectiveOnly}}", adjectiveOnly[adjIndex]);
+		template = template.Replace ("{{subject}}", subject [subIndex]);
+		template = template.Replace ("{{activity}}", activity [actIndex]);
+		template = template.Replace ("{{activityOnly}}", activityOnly [actIndex]);
 
 		return template;
 	}
 
+	void generateTextIndice(){
+
+		missionTypes.Clear ();
+
+		adjIndex = Random.Range (0, adjective.Length);
+		subIndex = Random.Range (0, subject.Length);
+		actIndex = Random.Range (0, activity.Length);
+
+		addToGameTypeList ((Game.Type[])adjectiveTypes[adjIndex], missionTypes);
+		addToGameTypeList ((Game.Type[])subjectTypes[subIndex], missionTypes);
+		addToGameTypeList ((Game.Type[])activityTypes[actIndex], missionTypes);
+	}
+
+	List<Game.Type> addToGameTypeList(Game.Type[] types, List<Game.Type> typesList){
+		for (int i = 0; i < types.Length; i++) {
+			typesList.Add(types[i]);
+		}
+
+		return typesList;
+	}
 
 	void getItemType(){
 		// Create a list of gameObjects to send to spawners
 		// the list is determined by the level text selected
 		// Game.getObjectOfType ("type").gameObject;
 	}
+
+
+
+
+	// this class will spawn and control the character
 }
 
 

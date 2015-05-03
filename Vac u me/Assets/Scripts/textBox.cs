@@ -30,8 +30,6 @@ public class textBox : ccEventBase {
 
 		incrementTextIndex ();
 
-		Debug.Log (text.Count);
-
 		if (currentTextIndex < text.Count) {
 			destroyAllLetterMeshes();
 			instantiateLetterMeshes();
@@ -67,8 +65,6 @@ public class textBox : ccEventBase {
 
 	void addCharacter(){
 		currentLetterIndex++;
-		Debug.Log (currentTextIndex);
-		Debug.Log (currentLetterIndex);
 		char letter = text[currentTextIndex][currentLetterIndex];
 		if(char.IsWhiteSpace(letter)){
 			

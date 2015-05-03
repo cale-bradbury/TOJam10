@@ -6,6 +6,7 @@ using Holoville.HOTween;
 public class CollectedItemManager : MonoBehaviour {
 
 	public Vector3 itemScale = new Vector3 (.2f, .2f, .2f);
+	public float itemRotateSpeed = 45f;
 
 	public GameObject testObj;
 
@@ -45,15 +46,10 @@ public class CollectedItemManager : MonoBehaviour {
 
 	void revealItem(GameObject newItem){
 
-		Vector3 newItemSize = newItem.GetComponent<Collider> ().bounds.size;
-		Debug.Log (newItemSize);
-
 		// Set new first item
 		items.Insert (0, newItem);
 
 		if (items.Count > 1) {
-			// Do this to the previous first item
-			// Scale it down
 			HOTween.To (items [1].transform, .2f, new TweenParms ().Prop ("localScale", itemScale));
 		}
 
@@ -66,7 +62,7 @@ public class CollectedItemManager : MonoBehaviour {
 		Utils.ZeroChildPosition (newItem.transform);
 
 		HOTween.To(newItem.transform, .2f, new TweenParms ().Prop("localScale", itemScale*2));
-		newItem.AddComponent<ccRotate> ().degreesPerSecond = Vector3.up * 15;
+		newItem.AddComponent<ccRotate> ().degreesPerSecond = Vector3.up * itemRotateSpeed;
 
 
 	}
