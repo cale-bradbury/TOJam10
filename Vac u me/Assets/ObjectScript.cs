@@ -17,6 +17,7 @@ public class ObjectScript : MonoBehaviour {
 
 	// Use this for initialization
 	public virtual void Start () {
+
 		Game.all.Add (this);
 		body = GetComponent<Rigidbody> ();
 		if (body == null) {
@@ -27,7 +28,7 @@ public class ObjectScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	void OnDestroy(){
