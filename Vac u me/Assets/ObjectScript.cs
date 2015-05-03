@@ -38,6 +38,7 @@ public class ObjectScript : MonoBehaviour {
 	public virtual void Collect(){
 		Messenger.Broadcast (onCollectEvent);
 		Destroy (body);
+		GetComponent<Renderer> ().material.SetFloat ("_HoloMode", 1);
 		collected = true;
 	}
 

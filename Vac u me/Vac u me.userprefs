@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Materials\DefaultItem.shader">
     <Files>
-      <File FileName="Assets\Materials\DefaultItem.shader" Line="50" Column="29" />
+      <File FileName="Assets\Materials\DefaultItem.shader" Line="48" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
