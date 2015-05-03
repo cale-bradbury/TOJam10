@@ -5,6 +5,8 @@ using Holoville.HOTween;
 
 public class CollectedItemManager : MonoBehaviour {
 
+	public Vector3 itemScale = new Vector3 (.2f, .2f, .2f);
+
 	public GameObject testObj;
 
 	private ccCreateRing orbitRing;
@@ -18,9 +20,9 @@ public class CollectedItemManager : MonoBehaviour {
 	void Start () {
 
 
-		for (int i = 1; i <= 15; i++) {
+		/*for (int i = 1; i <= 15; i++) {
 			Invoke ("test", (float)i);	// this code is for testing and will be removed.
-		}
+		}*/
 	}
 
 	void test(){
@@ -40,7 +42,6 @@ public class CollectedItemManager : MonoBehaviour {
 		revealItem (newItem);
 
 		if (items.Count > orbitRing.count) {
-			//TODO: Remove the last item? OR just hide it?
 			int removeIndex = orbitRing.count;
 			HOTween.To(items[removeIndex].transform, .2f, new TweenParms ().Prop("localScale", Vector3.zero).OnComplete(removeItem, items[removeIndex]));
 		}
@@ -53,9 +54,7 @@ public class CollectedItemManager : MonoBehaviour {
 		newItem.transform.localPosition = Vector3.zero;
 		Utils.ZeroChildPosition (newItem.transform);
 
-		// TODO: animate the scale up
-		Vector3 newScale = Vector3.one / 2;
-		HOTween.To(newItem.transform, .2f, new TweenParms ().Prop("localScale", newScale));
+		HOTween.To(newItem.transform, .2f, new TweenParms ().Prop("localScale", itemScale));
 
 		items.Insert (0, newItem);
 	}
