@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: a08f1f9ec0a2de644a21c14def796869
-timeCreated: 1430595936
-licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
@@ -12,6 +10,7 @@ ModelImporter:
     2300000: Pyramid001
     3300000: Pyramid001
     4300000: Pyramid001
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -65,7 +64,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 
   assetBundleName: 
