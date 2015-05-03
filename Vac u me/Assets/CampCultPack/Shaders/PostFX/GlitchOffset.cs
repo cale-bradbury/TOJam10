@@ -12,7 +12,7 @@ public class GlitchOffset : ImageEffectBase {
 	
 	// Called by camera to apply image effect
 	void OnRenderImage (RenderTexture source, RenderTexture destination) {
-		material.SetVector("_Shape", new Vector4(xStrength,yStrength,radialStrength*Mathf.PI*2,0)*intensity);
+		material.SetVector("_Shape", new Vector4(xStrength,yStrength,radialStrength*Mathf.PI*2,intensity)*intensity);
 		Graphics.Blit (source, destination, material);
 	}
 }
