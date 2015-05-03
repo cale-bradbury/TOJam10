@@ -1,13 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CampCultPack\Shaders\PostFX\RGBRotate.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CouchScript.cs">
     <Files>
       <File FileName="Assets\Materials\DefaultItem.shader" Line="10" Column="3" />
-      <File FileName="Assets\ObjectScript.cs" Line="40" Column="18" />
-      <File FileName="Assets\VacScript.cs" Line="83" Column="47" />
+      <File FileName="Assets\ObjectScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\VacScript.cs" Line="1" Column="1" />
       <File FileName="Assets\CollectedItemManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Game.cs" Line="64" Column="20" />
-      <File FileName="Assets\CampCultPack\Shaders\PostFX\RGBRotate.shader" Line="25" Column="31" />
+      <File FileName="Assets\Game.cs" Line="1" Column="1" />
+      <File FileName="Assets\CampCultPack\Shaders\PostFX\RGBRotate.shader" Line="1" Column="1" />
+      <File FileName="Assets\CharacterManager.cs" Line="17" Column="1" />
+      <File FileName="Assets\CouchScript.cs" Line="10" Column="2" />
+      <File FileName="Assets\CampCultPack\Scripts\ArrayUtils.cs" Line="74" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
