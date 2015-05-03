@@ -123,7 +123,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 16506003}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -252,6 +252,10 @@ Prefab:
     - target: {fileID: 11467336, guid: a704c5ddc42a31e4eaf1a211f87f5f22, type: 2}
       propertyPath: events.Array.data[1]
       value: onStory
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467336, guid: a704c5ddc42a31e4eaf1a211f87f5f22, type: 2}
+      propertyPath: rotations.Array.data[0].x
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a704c5ddc42a31e4eaf1a211f87f5f22, type: 2}
@@ -463,7 +467,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1188455302}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -542,7 +546,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1202637817}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -615,7 +619,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1327276145}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -719,8 +723,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1355181065}
   - 114: {fileID: 1355181067}
-  - 114: {fileID: 1355181066}
   - 114: {fileID: 1355181068}
+  - 114: {fileID: 1355181066}
+  - 114: {fileID: 1355181069}
   m_Layer: 0
   m_Name: Title
   m_TagString: Untagged
@@ -741,7 +746,7 @@ Transform:
   - {fileID: 1348361710}
   - {fileID: 789023353}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &1355181066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,11 +755,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1355181064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a32c5cdc58b8d647b4478c965b60c5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bea1108e1dd768449fe638a6984b931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: onStory
-  obj: {fileID: 1355181064}
+  enableEvent: onEndGame
+  disableEvent: hideIntro
+  behaviours:
+  - {fileID: 1355181068}
 --- !u!114 &1355181067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,6 +806,78 @@ MonoBehaviour:
   key: 32
   eventName:
   - hideIntro
+--- !u!114 &1355181069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1355181064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d7dd4a6e7075ba428c58fcf526e4798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: onEndGame
+  endEvent: 
+  animation:
+    serializedVersion: 2
+    m_Curve:
+    - time: .00243902439
+      value: 1.00244486
+      inSlope: -1.71847606
+      outSlope: -1.71847606
+      tangentMode: 0
+    - time: .998780489
+      value: -.00244486332
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  multiplier: {x: 0, y: 15, z: 0}
+  time: 1
+--- !u!1001 &1439084713
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 431390, guid: 81e9a80c42469e74b8391b011ecb431e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431390, guid: 81e9a80c42469e74b8391b011ecb431e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 431390, guid: 81e9a80c42469e74b8391b011ecb431e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431390, guid: 81e9a80c42469e74b8391b011ecb431e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431390, guid: 81e9a80c42469e74b8391b011ecb431e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431390, guid: 81e9a80c42469e74b8391b011ecb431e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431390, guid: 81e9a80c42469e74b8391b011ecb431e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 431390, guid: 81e9a80c42469e74b8391b011ecb431e, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 81e9a80c42469e74b8391b011ecb431e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1446756403
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,7 +981,7 @@ Transform:
   - {fileID: 839994074}
   - {fileID: 1885112057}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &1520755638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,7 +1016,6 @@ MonoBehaviour:
   - {fileID: 11419220, guid: 68545ed7c902cc342a55f4230dbdc1b8, type: 2}
   - {fileID: 11478736, guid: 81e9a80c42469e74b8391b011ecb431e, type: 2}
   - {fileID: 11411490, guid: 8733387f724bb004dbcac8cd0f51787d, type: 2}
-  - {fileID: 11471544, guid: b5a9a8c7bbed37540acf322882cd7f45, type: 2}
   - {fileID: 11489970, guid: be62382ec4e25b843850d05f433f8eda, type: 2}
   - {fileID: 11475906, guid: ca4ab630196debd4c9112d974abaff0b, type: 2}
   - {fileID: 11438164, guid: d253be00fd4151148b17bcf75823b390, type: 2}
@@ -1036,7 +1114,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1592535760}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1162,4 +1240,4 @@ Transform:
   m_Children:
   - {fileID: 977383781}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
