@@ -65,8 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6bfc3b18f7d102459638ca214e64dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: 
-  completeEvent: 
+  eventName: onKey
+  completeEvent: onGame
   text: []
   textEvents: []
   letterMesh: {fileID: 161916, guid: 966ff83cfe49cee4fbf2c52d06c7547d, type: 2}
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: 32
   eventName:
-  - 
+  - onKey
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

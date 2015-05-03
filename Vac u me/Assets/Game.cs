@@ -46,6 +46,10 @@ public class Game : MonoBehaviour {
 
 	void OnEnable(){
 		i = this;
+		spawnTypes = missionManager.missionTypes;
+		if (spawnTypes.Count == 0) {
+			spawnTypes.Add(Type.General);
+		}
 		typeNames = System.Enum.GetNames (typeof(Type));
 		allSpawned = false;
 		allCollected = false;
