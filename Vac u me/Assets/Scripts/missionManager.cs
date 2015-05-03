@@ -15,23 +15,29 @@ public class missionManager : MonoBehaviour {
 
 	private string[] adjective = new string[]
 	{
-		"a wild",
-		"a professional",	
-	    "a steamy",
-	    "an intellectual",
-	    "an avant garde",
-	    "a filthy",
-	    "a trippy",
-	    "a technical",
-	    "a phat",
-	    "a social",
-	    "an unsanitary",
-	    "an unethical",
-	    "a relaxing",
-		"a pretentious",
-	 	"a chilling",
-		"a discreet",
-		"a cynical"
+		"a wild",				// 1
+		"a professional",		// 2
+	    "a steamy",				// 3
+	    "an intellectual",		// 4
+	    "an avant garde",		// 5
+	    "a filthy",				// 6
+	    "a trippy",				// 7
+	    "a technical", 			// 8
+	    "a phat",				// 9
+	    "a social",				// 10
+	    "an unsanitary",		// 11
+	    "an unethical",			// 12
+	    "a relaxing",			// 13
+		"a pretentious",		// 14
+	 	"a chilling", 			// 15
+		"a discreet",			// 16
+		"a cynical",			// 17
+		"a dumpy",   			// 18
+		"a rank",				// 19
+		"a swell",				// 20
+		"a cheesey",			// 21
+		"a saucey",				// 22
+		"a farty" 				// 23
 	};
 
 	private string[] adjectiveOnly;
@@ -53,7 +59,13 @@ public class missionManager : MonoBehaviour {
 		new Game.Type[] {Game.Type.General, Game.Type.Nerdy},
 		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Sex, Game.Type.LARPing},
 		new Game.Type[] {Game.Type.General, Game.Type.Food},
-		new Game.Type[] {Game.Type.General, Game.Type.Drug}
+		new Game.Type[] {Game.Type.General, Game.Type.Drug},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Food},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Food},
+		new Game.Type[] {Game.Type.General, Game.Type.Lego, Game.Type.Games},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Food},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Food},
 	};
 
 	private string[] subject = new string[]
@@ -62,17 +74,20 @@ public class missionManager : MonoBehaviour {
 		"chips 'n dip",
 		"arts and crafts",
 		"Lego",
-		"sex",
+		"sex",				// 5
 		"heroin",
 		"swingers",
 		"D&D",
 		"LARPing",
-		"candy",
+		"candy",			// 10
 		"Netflix",
 		"video games",
 		"fecal",
 		"anime",
-		"coding"
+		"coding",			// 15
+		"BBQ",
+		"scrap booking",
+		"extreme sports"	// 18
 	};
 
 	private Game.Type[][] subjectTypes = new Game.Type[][]{
@@ -90,30 +105,35 @@ public class missionManager : MonoBehaviour {
 		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Drug, Game.Type.VideoGames},
 		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Sex},
 		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Drug, Game.Type.VideoGames},
-		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Tech}
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Food, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Games, Game.Type.Food, Game.Type.Dirty, Game.Type.Drug}
 	};
 
 	private string[] activity = new string[]
 	{
-		"an orgy",
+		"an orgy",		
 		"a party",
 		"a business meeting",
 		"a performance",
-		"a binge",
+		"a binge",				// 5
 		"an incident",
 		"a calamity",
 		"a crisis",
 		"an accident",
-		"an event",
+		"an event",				// 10
 		"a marathon",
 		"a discussion",
 		"a jam",
 		"a disaster",
-		"a rap battle",
+		"a rap battle",			// 15
 		"a dance-off",
 		"a chill sesh",
 		"a ball",
-		"a crusade"
+		"a crusade",
+		"a bender",				// 20
+		"a detox"				// 21
 	};
 
 	private string[] activityOnly;
@@ -136,8 +156,10 @@ public class missionManager : MonoBehaviour {
 		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty},
 		new Game.Type[] {Game.Type.General, Game.Type.LARPing, Game.Type.Dirty},
 		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.Food, Game.Type.Sex},
 		new Game.Type[] {Game.Type.General, Game.Type.LARPing, Game.Type.Dirty},
-		new Game.Type[] {Game.Type.General}
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Drug},
+		new Game.Type[] {Game.Type.General, Game.Type.Food, Game.Type.VideoGames}
 	};
 
 	private string[] questTemplate = new string[]
@@ -149,7 +171,13 @@ public class missionManager : MonoBehaviour {
 		"I am a bachelor. A bachelor is {{adjective}} man who comes to work each morning from a different {{activityOnly}}.  I do not have time to clean couches, so you have to do it.",
 		"You can take the {{subject}} out of the couch, but you can't take the couch out of the {{subject}}.",
 		"There was {{activity}}... {{subject}} everywhere.... The couch.... Please help.",
-		"For the past 33 years, I have looked in the mirror every morning and asked myself: 'If today were the last day of my life, would I want to do what I am about to do today?' And whenever the answer has been 'No' for too many days in a row, I know I need to hire someone to clean my couch."
+		"For the past 33 years, I have looked in the mirror every morning and asked myself: 'If today were the last day of my life, would I want to do what I am about to do today?' And whenever the answer has been 'No' for too many days in a row, I know I need to hire someone to clean my couch.",
+		"You could not imagine the {{adjectiveOnly}} {{subject}} {{activityOnly}} that went down, but now where I sit is a mess, I need you to clean it alright? alright.",
+		"I could sure go for {{activity}}, but my couch is {{adjective}} mess, you've got to clean it for me or it just won't happen.",
+		"I was about to sit down to watch my favourite {{subject}} television program and noticed my couch is in {{adjectvie}} mess worthy of {{activity}}. Clean it so I can enjoy this program.",
+		"My couch is my most prized possesion you'd think I'd take better care of it but my {{adjectiveOnly}} {{subject}} {{activityOnly}} last night really took it's toll, please help.",
+		"I'm an individual who enjoys {{adjective}} {{subject}} {{activityOnly}} as much as the next person, but the state of my couch is un-acceptable, do something about it.",
+		"I'm feelin pretty {{adjectiveOnly}} and my couch is a direct reflection of how I feel, please get to work so my {{subject}} {{activityOnly}} will go off with out a hitch."
 	};
 
 	// Use this for initialization
