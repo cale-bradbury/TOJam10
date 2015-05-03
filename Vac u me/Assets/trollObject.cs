@@ -25,6 +25,7 @@ public class trollObject : ObjectScript {
 	
 	void moveToTarget(){
 		if (target != null) {
+			// TODO: rotate to look at target
 			transform.position = Vector3.MoveTowards (transform.position, target.transform.position, speed * Time.deltaTime);
 		}
 	}
