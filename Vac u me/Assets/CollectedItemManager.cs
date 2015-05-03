@@ -55,6 +55,7 @@ public class CollectedItemManager : MonoBehaviour {
 		Utils.ZeroChildPosition (newItem.transform);
 
 		HOTween.To(newItem.transform, .2f, new TweenParms ().Prop("localScale", itemScale));
+		newItem.AddComponent<ccRotate> ().degreesPerSecond = Vector3.up * 15;
 
 		items.Insert (0, newItem);
 	}
