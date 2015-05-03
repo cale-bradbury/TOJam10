@@ -18,6 +18,9 @@ public class VacScript : MonoBehaviour {
 	public GameObject suctionObject;
 	public float width = 10;
 	public float depth = 5;
+
+	public CollectedItemManager collectedItemManager;
+
 	Vector3 targetPosition;
 	float dir;
 
@@ -71,8 +74,12 @@ public class VacScript : MonoBehaviour {
 	}
 
 	void Collect(ObjectScript o){
-		money += o.value;
-		weight += o.weight;
-		o.Collect (transform.position);
+		o.Collect ();
+		if(o.collected){
+			GameObject g = o.gameObject;
+			Destroy (o);
+			collectedItemManager.addItem(g);
+		}
+	
 	}
 }

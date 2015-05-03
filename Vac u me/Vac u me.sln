@@ -29,12 +29,22 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 								GlobalSection(MonoDevelopProperties) = preSolution
 =======
+=======
+<<<<<<< HEAD
+>>>>>>> origin/new-erik
 						GlobalSection(MonoDevelopProperties) = preSolution
 =======
 				GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> d730c99a8290fc566cf9de5e3ecd86917eafd2fd
+<<<<<<< HEAD
+>>>>>>> origin/new-erik
+=======
+=======
+							GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> f360ed3fd9ea5b488193de4dac606e90bd4b45d4
 >>>>>>> origin/new-erik
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
