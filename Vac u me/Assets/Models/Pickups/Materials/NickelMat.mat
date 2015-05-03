@@ -130,6 +130,10 @@ Material:
         first:
           name: _Metallic
         second: .31099999
+      data:
+        first:
+          name: _HoloMode
+        second: 0
     m_Colors:
       data:
         first:
@@ -143,3 +147,11 @@ Material:
         first:
           name: _EmissionColorUI
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Holo
+        second: {r: 5, g: 3, b: 2, a: 1}
+      data:
+        first:
+          name: _HoloColor
+        second: {r: .0758621693, g: 1, b: 0, a: 1}
