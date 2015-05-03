@@ -1,9 +1,10 @@
-Shader "Cale/Kalidescope" {
+Shader "CampCult/Kalidescope" {
 Properties {
 	_MainTex ("Base (RGB)", 2D) = "white" {}
 	_Angle ("Angle", float) = 1
 	_BaseAngle("BaseAngle",float) = 1
 	_SpinAngle("SpinAngle",float) = 0
+	_Intensity("Intensity",float) = 1
 }
 
 SubShader {
@@ -23,6 +24,7 @@ uniform float4 _MainTex_ST;
 uniform float _Angle;
 uniform float _BaseAngle;
 uniform float _SpinAngle;
+uniform float _Intensity;
 
 fixed4 frag (v2f_img i) : COLOR
 {
@@ -36,7 +38,7 @@ fixed4 frag (v2f_img i) : COLOR
 	uv.y = sin(a)*d;	
 	uv = (uv+0.5)*_MainTex_ST.xy+_MainTex_ST.zw;
 	uv = abs(fmod(uv+1.,2.)-1.);
-	return tex2D(_MainTex, uv);
+	return lerp(tex2D(_MainTex, i.uv),tex2D(_MainTex, uv),_Intensity);
 }
 ENDCG
 

@@ -18,4 +18,10 @@ public class Utils : MonoBehaviour {
 		}
 		DestroyImmediate (c);
 	}
+
+	public static void ZeroChildPosition (Transform transform){
+		for(int i = 0; i<transform.childCount;i++){
+			ZeroChildPosition(transform.GetChild(i));
+		}
+	}
 }

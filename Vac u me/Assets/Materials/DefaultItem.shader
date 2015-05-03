@@ -28,6 +28,7 @@
 					float4 world = mul (_Object2World, v.vertex);
 					float d = distance(world.xyz,_vac.xyz)/_vac.w;
 					d = max(0.0,1.0-d);
+					d = pow(d,4.0);
 					world.xyz = lerp(world.xyz,_vac.xyz,d);
 					v.vertex = mul (_World2Object, world);
 					
