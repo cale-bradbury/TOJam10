@@ -32,6 +32,7 @@ public class Game : MonoBehaviour {
 
 	public string onEndGameEvent;
 	bool allCollected;
+	bool gameEnded = false;
 
 
 	// Use this for initialization
@@ -58,6 +59,9 @@ public class Game : MonoBehaviour {
 	}
 
 	void EndGame(){
+		if (gameEnded)
+			return;
+		gameEnded = true;
 		Messenger.Broadcast (onEndGameEvent);
 	}
 
