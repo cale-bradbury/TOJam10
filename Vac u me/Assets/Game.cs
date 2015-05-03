@@ -21,7 +21,7 @@ public class Game : MonoBehaviour {
 
 	public static List<ObjectScript> all = new List<ObjectScript>();
 	public static Game i;
-	public List<GameObject>allPrefabs;
+	public List<ObjectScript>allPrefabs;
 
 	public string onAllCollectedEvent;
 	bool allCollected;
@@ -45,9 +45,15 @@ public class Game : MonoBehaviour {
 			allCollected = false;
 		}
 	}
-	public static GameObject GetObjectOfType(Game.Type t){
+	public static ObjectScript GetObjectOfType(Game.Type t){
 		if (i == null)
 			return null;
-		//i.allPrefabs.
+		i.allPrefabs = Utils.RandomizeList (i.allPrefabs);
+		for(int j = 0; j< i.allPrefabs.Count;j++){
+			foreach(Game.Type type in i.allPrefabs[j].types){
+				if(type==t)return i.allPrefabs[j];
+			}
+		}
+		return null;
 	}
 }
