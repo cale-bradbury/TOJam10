@@ -77,10 +77,9 @@ public class VacScript : MonoBehaviour {
 		o.Collect ();
 		if(o.collected){
 			GameObject g = o.gameObject;
-			//Destroy (o);
-			//send g to func
+			Destroy (o);
 			collectedItemManager.addItem(g);
 		}
-
+	
 	}
 }

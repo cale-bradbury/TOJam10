@@ -25,7 +25,6 @@ public class Utils : MonoBehaviour {
 			ZeroChildPosition(transform.GetChild(i));
 		}
 	}
-
 	public static List<T> RandomizeList<T> (List<T> list){
 		List<T> a = new List<T>();
 		while (list.Count!=0) {
