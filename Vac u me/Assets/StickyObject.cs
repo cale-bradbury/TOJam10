@@ -13,7 +13,7 @@ public class StickyObject : ObjectScript {
 	public override void Start(){
 		base.Start ();
 		body.constraints = RigidbodyConstraints.FreezeAll;
-		childObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
+		//childObject.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 
 		addRandomPositionAnimation ();
 	}
@@ -40,6 +40,8 @@ public class StickyObject : ObjectScript {
 		}
 		Debug.Log (lastTimeSucked);
 	}
+
+	//TODO: on collision with the ground freeze RigidbodyConstraints
 	
 	void addRandomPositionAnimation(){
 		animRandom = GetComponent<ccRandomPosition> ();
