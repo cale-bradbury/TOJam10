@@ -1,4 +1,4 @@
-# Windows image file caches
+﻿# Windows image file caches
 Thumbs.db
 ehthumbs.db
 
@@ -20,7 +20,6 @@ $RECYCLE.BIN/
 *.csproj
 *.userprefs
 *.sln
-*.csproj
 
 # Windows shortcuts
 *.lnk
@@ -52,3 +51,5 @@ Temporary Items
 Vac u me/Vac u me-csharp.sln
 Vac u me/Vac u me.sln
 *.userprefs
+*.sln
+*.csproj

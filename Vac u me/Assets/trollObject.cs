@@ -26,6 +26,10 @@ public class trollObject : ObjectScript {
 	void moveToTarget(){
 		if (target != null) {
 			// TODO: rotate to look at target
+			Vector3 v = transform.eulerAngles;
+			transform.LookAt(target.transform);
+			v.y = Mathf.Lerp(v.y, transform.eulerAngles.y, 10*Time.deltaTime);
+			transform.eulerAngles = v;
 			transform.position = Vector3.MoveTowards (transform.position, target.transform.position, speed * Time.deltaTime);
 		}
 	}
