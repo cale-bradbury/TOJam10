@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 public class missionManager : MonoBehaviour {
 
-	public CharacterManager characterManager;
+	public GameObject characterGroupPrefab;
+	public GameObject characterPrefab;
+	public GameObject textBoxPrefab;
 
 	int adjIndex;
 	int subIndex;
@@ -110,16 +112,10 @@ public class missionManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		adjectiveOnly = removeFirstWords (adjective);
 		activityOnly = removeFirstWords (activity);
 
-		Debug.Log (generateMissionText ());
-		Debug.Log (generateMissionText ());
-		Debug.Log (generateMissionText ());
-		Debug.Log (generateMissionText ());
-		Debug.Log (generateMissionText ());
-		Debug.Log (generateMissionText ());
+		setUpNewMission ();
 	}
 	
 	// Update is called once per frame
@@ -140,6 +136,30 @@ public class missionManager : MonoBehaviour {
 		}
 
 		return newPhrases;
+	}
+
+	void setUpNewMission(){
+
+		// init characterGroupPrefab
+		GameObject cg = (GameObject) Instantiate(characterGroupPrefab, new Vector3(-11.36f,-4.13f,-3.73f), transform.rotation);
+
+		// Gen Mission Text
+		string missionText = generateMissionText ();
+
+		// Init dialog text box
+		GameObject t = (GameObject) Instantiate(textBoxPrefab, cg.transform.position, transform.rotation);
+		t.transform.parent = cg.transform;
+		textBox tb = t.GetComponent<textBox> ();
+		tb.lineHeight = 2f;
+		tb.text.Add(missionText);
+		tb.displayText ();
+
+		// init characterPrefab 
+		GameObject cm = (GameObject) Instantiate(characterPrefab, cg.transform.position, transform.rotation);
+		cm.transform.parent = cg.transform;
+		cm.GetComponent<CharacterManager> ().NewFace ();
+
+		cg.transform.eulerAngles = new Vector3(42f,0f,0f);
 	}
 
 	string generateMissionText(){

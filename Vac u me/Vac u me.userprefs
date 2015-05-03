@@ -1,15 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\missionManager.cs">
     <Files>
-      <File FileName="Assets\CollectedItemManager.cs" Line="63" Column="3" />
-      <File FileName="Assets\Scripts\missionManager.cs" Line="169" Column="1" />
-      <File FileName="Assets\CampCultPack\Scripts\Creation\ccCreateGroup.cs" Line="1" Column="1" />
-      <File FileName="Assets\Game.cs" Line="76" Column="1" />
+      <File FileName="Assets\CollectedItemManager.cs" Line="47" Column="38" />
+      <File FileName="Assets\Scripts\missionManager.cs" Line="117" Column="31" />
+      <File FileName="Assets\Game.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\textBox.cs" Line="1" Column="1" />
-      <File FileName="Assets\VacScript.cs" Line="87" Column="1" />
+      <File FileName="Assets\VacScript.cs" Line="1" Column="1" />
       <File FileName="Assets\CampCultPack\Scripts\Messenger.cs" Line="1" Column="1" />
       <File FileName="Assets\ObjectScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\CharacterManager.cs" Line="23" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

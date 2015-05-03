@@ -8,7 +8,7 @@ public class CharacterManager : MonoBehaviour {
 	Material mat;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		mat = GetComponent<Renderer> ().material;
 	}
 	
@@ -16,7 +16,7 @@ public class CharacterManager : MonoBehaviour {
 	void Update () {
 
 	}
-	void NewFace(){
+	public void NewFace(){
 		mat.SetTexture("_MainTex",faces[Mathf.FloorToInt(Random.value*faces.Length)]);
 	}
 }
