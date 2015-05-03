@@ -7,6 +7,8 @@ public class missionManager : MonoBehaviour {
 	public GameObject characterPrefab;
 	public GameObject textBoxPrefab;
 
+	[HideInInspector]public static List<Game.Type> missionTypes = new List<Game.Type> ();
+
 	int adjIndex;
 	int subIndex;
 	int actIndex;
@@ -34,24 +36,24 @@ public class missionManager : MonoBehaviour {
 
 	private string[] adjectiveOnly;
 
-	private Game.Type[,] adjectiveTypes = new Game.Type[,]{
-		{Game.Type.General, Game.Type.Sex, Game.Type.Food},
-		{Game.Type.General, Game.Type.Tech},
-		{Game.Type.General, Game.Type.Sex},
-		{Game.Type.General, Game.Type.Nerdy},
-		{Game.Type.Drug, Game.Type.Sex, Game.Type.Games},
-		{Game.Type.General, Game.Type.Dirty},
-		{Game.Type.General, Game.Type.Drug, Game.Type.VideoGames},
-		{Game.Type.General, Game.Type.VideoGames, Game.Type.Nerdy, Game.Type.Tech},
-		{Game.Type.General, Game.Type.Games, Game.Type.VideoGames, Game.Type.Dnd, Game.Type.LARPing, Game.Type.Nerdy},
-		{Game.Type.General},
-		{Game.Type.General, Game.Type.Dirty},
-		{Game.Type.General, Game.Type.Drug, Game.Type.Sex},
-		{Game.Type.General, Game.Type.Food, Game.Type.Drug, Game.Type.VideoGames},
-		{Game.Type.General, Game.Type.Nerdy},
-		{Game.Type.General, Game.Type.Drug, Game.Type.Sex, Game.Type.LARPing},
-		{Game.Type.General, Game.Type.Food},
-		{Game.Type.General, Game.Type.Drug}
+	private Game.Type[][] adjectiveTypes = new Game.Type[][]{
+		new Game.Type[] {Game.Type.General, Game.Type.Sex, Game.Type.Food},
+		new Game.Type[] {Game.Type.General, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy},
+		new Game.Type[] {Game.Type.Drug, Game.Type.Sex, Game.Type.Games},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.VideoGames, Game.Type.Nerdy, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Games, Game.Type.VideoGames, Game.Type.Dnd, Game.Type.LARPing, Game.Type.Nerdy},
+		new Game.Type[] {Game.Type.General},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Food, Game.Type.Drug, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Sex, Game.Type.LARPing},
+		new Game.Type[] {Game.Type.General, Game.Type.Food},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug}
 	};
 
 	private string[] subject = new string[]
@@ -71,6 +73,24 @@ public class missionManager : MonoBehaviour {
 		"fecal",
 		"anime",
 		"coding"
+	};
+
+	private Game.Type[][] subjectTypes = new Game.Type[][]{
+		new Game.Type[] {Game.Type.General, Game.Type.VideoGames, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Food, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Drug},
+		new Game.Type[] {Game.Type.General, Game.Type.Lego, Game.Type.Games},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug},
+		new Game.Type[] {Game.Type.General, Game.Type.Sex, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Games, Game.Type.Dnd, Game.Type.LARPing, Game.Type.Nerdy},
+		new Game.Type[] {Game.Type.General, Game.Type.Games, Game.Type.Dnd, Game.Type.LARPing, Game.Type.Nerdy},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Drug, Game.Type.Food},
+		new Game.Type[] {Game.Type.General, Game.Type.Food, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Drug, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Drug, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Tech}
 	};
 
 	private string[] activity = new string[]
@@ -98,9 +118,31 @@ public class missionManager : MonoBehaviour {
 
 	private string[] activityOnly;
 
+	private Game.Type[][] activityTypes = new Game.Type[][]{
+		new Game.Type[] {Game.Type.General, Game.Type.Sex, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Sex, Game.Type.Food, Game.Type.Games},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Tech},
+		new Game.Type[] {Game.Type.General, Game.Type.Games},
+		new Game.Type[] {Game.Type.General, Game.Type.Dirty, Game.Type.Sex, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General},
+		new Game.Type[] {Game.Type.General},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy},
+		new Game.Type[] {Game.Type.General, Game.Type.Nerdy, Game.Type.Tech, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty, Game.Type.Sex},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.LARPing, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General, Game.Type.Drug, Game.Type.VideoGames},
+		new Game.Type[] {Game.Type.General, Game.Type.LARPing, Game.Type.Dirty},
+		new Game.Type[] {Game.Type.General}
+	};
+
 	private string[] questTemplate = new string[]
 	{
-		"Last night's {{adjectiveOnly}} {{subject}} {{activityOnly}} has left the couch is a mess. Soon my mother will be here to visit, can you help me clean it? She will be here in 27 seconds.",
+		"Last night's {{adjectiveOnly}} {{subject}} {{activityOnly}} has left the couch a mess. Soon my mother will be here to visit, can you help me clean it? She will be here in 27 seconds.",
 		"I am going to be hosting {{adjective}} {{activityOnly}} tonight, and I need this couch to be spotless.",
 		"We had a bit of {{adjective}} {{subject}} {{activityOnly}}. Now the couch reeks and I don't know who else to turn to. Can you help me?",
 		"Now that the monthly {{adjectiveOnly}} {{subject}} {{activityOnly}} has come to a close, I am in need of expertise.",
@@ -177,11 +219,26 @@ public class missionManager : MonoBehaviour {
 	}
 
 	void generateTextIndice(){
+
+		missionTypes.Clear ();
+
 		adjIndex = Random.Range (0, adjective.Length);
 		subIndex = Random.Range (0, subject.Length);
 		actIndex = Random.Range (0, activity.Length);
+
+		addToGameTypeList ((Game.Type[])adjectiveTypes[adjIndex], missionTypes);
+		addToGameTypeList ((Game.Type[])subjectTypes[subIndex], missionTypes);
+		addToGameTypeList ((Game.Type[])activityTypes[actIndex], missionTypes);
 	}
-	
+
+	List<Game.Type> addToGameTypeList(Game.Type[] types, List<Game.Type> typesList){
+		for (int i = 0; i < types.Length; i++) {
+			typesList.Add(types[i]);
+		}
+
+		return typesList;
+	}
+
 	void getItemType(){
 		// Create a list of gameObjects to send to spawners
 		// the list is determined by the level text selected
