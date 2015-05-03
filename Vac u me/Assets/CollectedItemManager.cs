@@ -18,11 +18,7 @@ public class CollectedItemManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-
-		/*for (int i = 1; i <= 15; i++) {
-			Invoke ("test", (float)i);	// this code is for testing and will be removed.
-		}*/
+		
 	}
 
 	void test(){
@@ -48,16 +44,31 @@ public class CollectedItemManager : MonoBehaviour {
 	}
 
 	void revealItem(GameObject newItem){
+
+		Vector3 newItemSize = newItem.GetComponent<Collider> ().bounds.size;
+		Debug.Log (newItemSize);
+
+		// Set new first item
+		items.Insert (0, newItem);
+
+		if (items.Count > 1) {
+			// Do this to the previous first item
+			// Scale it down
+			HOTween.To (items [1].transform, .2f, new TweenParms ().Prop ("localScale", itemScale));
+		}
+
+
+		// Do this to the new item
 		newItem.transform.parent = transform;
 
 		// Set position
 		newItem.transform.localPosition = Vector3.zero;
 		Utils.ZeroChildPosition (newItem.transform);
 
-		HOTween.To(newItem.transform, .2f, new TweenParms ().Prop("localScale", itemScale));
+		HOTween.To(newItem.transform, .2f, new TweenParms ().Prop("localScale", itemScale*2));
 		newItem.AddComponent<ccRotate> ().degreesPerSecond = Vector3.up * 15;
 
-		items.Insert (0, newItem);
+
 	}
 
 	void updateItemsPositions(){
@@ -69,7 +80,7 @@ public class CollectedItemManager : MonoBehaviour {
 			loopAmount = items.Count;	
 		}
 
-		for (int i = 0; i < loopAmount; i++) {
+		for (int i = 1; i < loopAmount; i++) {
 			int orbitIndex = orbitRing.all.Count - (i+1);
 			Vector3 target = orbitRing.all[orbitIndex].transform.localPosition;
 			HOTween.To(items[i].transform, .5f, new TweenParms ().Prop("localPosition",target));

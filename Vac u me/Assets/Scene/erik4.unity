@@ -846,7 +846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 43595e86a0ad9bc498d93f6449eb0a0a, type: 3}
   mirrors: 12
-  baseAngle: 223.044693
+  baseAngle: 227.864761
   basePerSecond: .5
   spinAngle: 0
   spinPerSecond: 0
