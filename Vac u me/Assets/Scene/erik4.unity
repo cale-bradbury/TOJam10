@@ -846,7 +846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 43595e86a0ad9bc498d93f6449eb0a0a, type: 3}
   mirrors: 12
-  baseAngle: 227.864761
+  baseAngle: 252.361725
   basePerSecond: .5
   spinAngle: 0
   spinPerSecond: 0
@@ -1116,11 +1116,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454772, guid: e14a18f13fc22934fad8b43121e7a754, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.05999994
+      value: 3.19000006
       objectReference: {fileID: 0}
     - target: {fileID: 454772, guid: e14a18f13fc22934fad8b43121e7a754, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 7.44999981
+      value: 7.78000021
       objectReference: {fileID: 0}
     - target: {fileID: 454772, guid: e14a18f13fc22934fad8b43121e7a754, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1142,7 +1142,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 472110, guid: e14a18f13fc22934fad8b43121e7a754, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .289999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 472110, guid: e14a18f13fc22934fad8b43121e7a754, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.63999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 472110, guid: e14a18f13fc22934fad8b43121e7a754, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.360000014
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443790, guid: e14a18f13fc22934fad8b43121e7a754, type: 2}
+      propertyPath: itemRotateSpeed
+      value: 45
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 13533814, guid: e14a18f13fc22934fad8b43121e7a754, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e14a18f13fc22934fad8b43121e7a754, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1436665536 stripped
