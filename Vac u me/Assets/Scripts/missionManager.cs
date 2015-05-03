@@ -96,6 +96,13 @@ public class missionManager : MonoBehaviour {
 
 		return template;
 	}
+
+
+	void getItemType(){
+		// Create a list of gameObjects to send to spawners
+		// the list is determined by the level text selected
+		// Game.getObjectOfType ("type").gameObject;
+	}
 }
 
 

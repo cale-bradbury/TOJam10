@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Holoville.HOTween;
 
 public class CollectedItemManager : MonoBehaviour {
 
@@ -15,43 +16,69 @@ public class CollectedItemManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Invoke ("test", 1f);
+
+
+		for (int i = 1; i <= 15; i++) {
+			Invoke ("test", (float)i);	// this code is for testing and will be removed.
+		}
 	}
 
 	void test(){
-		// this code is for testing and will be removed.
-		testObj.GetComponent<trollObject> ().enabled = false;
-		Destroy (testObj.GetComponent<Rigidbody> ());
-		Debug.Log (testObj.transform.localScale);
-		testObj.transform.localScale = Vector3.zero;
-		Debug.Log (testObj.transform.localScale);
-		addItem (testObj);
+		GameObject t = (GameObject) Instantiate(testObj, transform.position, transform.rotation);
+		t.GetComponent<trollObject> ().enabled = false;
+		Destroy (t.GetComponent<Rigidbody> ());
+		t.transform.localScale = Vector3.zero;
+		addItem (t);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		updateItemsPositions ();
 	}
 
 	public void addItem(GameObject newItem){
-		items.Insert (0, newItem);
-
 		revealItem (newItem);
 
 		if (items.Count > orbitRing.count) {
-			// Remove the last item?
+			//TODO: Remove the last item? OR just hide it?
+			int removeIndex = orbitRing.count;
+			HOTween.To(items[removeIndex].transform, .2f, new TweenParms ().Prop("localScale", Vector3.zero).OnComplete(removeItem, items[removeIndex]));
 		}
 	}
 
 	void revealItem(GameObject newItem){
-
 		newItem.transform.parent = transform;
 
-		// TODO: animate the scale up
-		//newItem.transform.localScale = Vector3.one;
-		Debug.Log (newItem.transform.localScale);
-
+		// Set position
 		newItem.transform.localPosition = Vector3.zero;
 		Utils.ZeroChildPosition (newItem.transform);
+
+		// TODO: animate the scale up
+		Vector3 newScale = Vector3.one / 2;
+		HOTween.To(newItem.transform, .2f, new TweenParms ().Prop("localScale", newScale));
+
+		items.Insert (0, newItem);
+	}
+
+	void updateItemsPositions(){
+		int loopAmount;
+
+		if (items.Count > orbitRing.all.Count) {
+			loopAmount = orbitRing.all.Count;
+		} else {
+			loopAmount = items.Count;	
+		}
+
+		for (int i = 0; i < loopAmount; i++) {
+			int orbitIndex = orbitRing.all.Count - (i+1);
+			Vector3 target = orbitRing.all[orbitIndex].transform.localPosition;
+			HOTween.To(items[i].transform, .5f, new TweenParms ().Prop("localPosition",target));
+		}
+	}
+
+	void removeItem(TweenEvent data){
+		GameObject item = (GameObject) data.parms[0];
+		items.Remove (item);
+		Destroy (item);
 	}
 }
