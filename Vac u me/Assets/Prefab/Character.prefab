@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd81454dc2d91f8428c839bf6714b756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisMultiplier: {x: 10, y: 0, z: 0}
+  axisMultiplier: {x: -5, y: 0, z: 0}
   position:
     serializedVersion: 2
     m_Curve:

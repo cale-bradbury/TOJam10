@@ -161,7 +161,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 477098}
   - 33: {fileID: 3341712}
-  - 135: {fileID: 13561666}
   - 23: {fileID: 2338698}
   - 114: {fileID: 11423750}
   - 114: {fileID: 11486900}
@@ -266,7 +265,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126178}
-  m_LocalRotation: {x: .382683456, y: 0, z: 0, w: .923879504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -636,6 +635,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemScale: {x: .200000003, y: .200000003, z: .200000003}
+  itemRotateSpeed: 45
+  endgameEvent: onEndGame
   testObj: {fileID: 108198, guid: 67fce74d5d9ceeb4bb1e3c6b842da448, type: 2}
 --- !u!114 &11424066
 MonoBehaviour:
@@ -727,7 +728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 43595e86a0ad9bc498d93f6449eb0a0a, type: 3}
   mirrors: 12
-  baseAngle: 456.68399
+  baseAngle: 458.346558
   basePerSecond: .5
   spinAngle: 0
   spinPerSecond: 0
@@ -784,7 +785,7 @@ MonoBehaviour:
   - onStory
   - onEndGame
   rotations:
-  - {x: 45, y: 0, z: 0}
+  - {x: 40, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   lerp: .100000001
@@ -876,18 +877,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126178}
   m_Enabled: 1
---- !u!135 &13561666
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176480}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

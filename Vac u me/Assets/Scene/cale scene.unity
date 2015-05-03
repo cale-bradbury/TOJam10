@@ -249,20 +249,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11467336, guid: a704c5ddc42a31e4eaf1a211f87f5f22, type: 2}
-      propertyPath: events.Array.data[1]
-      value: onStory
-      objectReference: {fileID: 0}
-    - target: {fileID: 11467336, guid: a704c5ddc42a31e4eaf1a211f87f5f22, type: 2}
-      propertyPath: rotations.Array.data[0].x
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423750, guid: a704c5ddc42a31e4eaf1a211f87f5f22, type: 2}
-      propertyPath: endgameEvent
-      value: onEndGame
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 13561666, guid: a704c5ddc42a31e4eaf1a211f87f5f22, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a704c5ddc42a31e4eaf1a211f87f5f22, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &562013740 stripped
