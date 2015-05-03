@@ -6,15 +6,25 @@ ModelImporter:
     100000: Box007
     100002: Cylinder002
     100004: //RootNode
+    100006: ReciptPaper
+    100008: UIHousing
     400000: Box007
     400002: Cylinder002
     400004: //RootNode
+    400006: ReciptPaper
+    400008: UIHousing
     2300000: Box007
     2300002: Cylinder002
+    2300004: ReciptPaper
+    2300006: UIHousing
     3300000: Box007
     3300002: Cylinder002
+    3300004: ReciptPaper
+    3300006: UIHousing
     4300000: Box007
     4300002: Cylinder002
+    4300004: ReciptPaper
+    4300006: UIHousing
     9500000: //RootNode
   materials:
     importMaterials: 1
