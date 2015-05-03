@@ -16,6 +16,8 @@ public class VacScript : MonoBehaviour {
 	public float moveDistancePerSecond = 10;
 	public float positionLerp = .1f;
 	public GameObject suctionObject;
+	public float width = 10;
+	public float depth = 5;
 	Vector3 targetPosition;
 	float dir;
 
@@ -37,6 +39,8 @@ public class VacScript : MonoBehaviour {
 		targetPosition.x += Input.GetAxis (horiAxis) * moveDistancePerSecond * Time.deltaTime;
 		targetPosition.z += Input.GetAxis (vertAxis) * moveDistancePerSecond * Time.deltaTime;
 		targetPosition.y = transform.position.y;
+		targetPosition.x = Mathf.Max (-width, Mathf.Min (width, targetPosition.x));
+		targetPosition.z = Mathf.Max (-depth, Mathf.Min (depth, targetPosition.z));
 		transform.position = Vector3.Lerp (transform.position, targetPosition, positionLerp);
 	}
 

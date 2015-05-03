@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: e41c65371f4d14c43afd019c5155f688
-timeCreated: 1430591200
-licenseType: Free
-=======
-guid: 95f44e92adc0b3d4da81aa0f9212ce89
-timeCreated: 1430595344
-licenseType: Pro
->>>>>>> origin/master
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
@@ -18,6 +10,7 @@ ModelImporter:
     2300000: d6
     3300000: d6
     4300000: d6
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -37,11 +30,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-<<<<<<< HEAD
-    globalScale: 1
-=======
-    globalScale: .200000003
->>>>>>> origin/master
+    globalScale: 0
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -75,7 +64,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 
   assetBundleName: 
